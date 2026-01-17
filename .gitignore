@@ -6,6 +6,11 @@ README.md
 # Google Apps Script (not needed for deployment)
 google-apps-script.js
 
+# Backup files
+backup/
+*.old
+*.bak
+
 # System files
 .DS_Store
 Thumbs.db
