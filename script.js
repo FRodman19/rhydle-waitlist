@@ -43,6 +43,12 @@ function handleSubmit(event) {
     const email = formData.get('email');
     const projects = formData.get('projects');
 
+    // Get the submit button and show loader
+    const submitBtn = form.querySelector('.btn-primary');
+    const originalBtnContent = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="loader"></span>';
+
     // IMPORTANT: Replace this URL with your Google Apps Script web app URL
     const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxUGMj-mXPTwpmVW9mq_lW2XIDN460J9rqbJ2GGSTE-qaYrxbAtCDj1QLPvlM3tHOpR/exec';
 
@@ -74,8 +80,10 @@ function handleSubmit(event) {
             // Show success modal
             showModal();
 
-            // Reset form
+            // Reset form and button
             form.reset();
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnContent;
 
             // Track conversion (add your analytics code here)
             if (typeof gtag !== 'undefined') {
@@ -92,6 +100,8 @@ function handleSubmit(event) {
             // Data is backed up in localStorage
             showModal();
             form.reset();
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnContent;
         });
 }
 
