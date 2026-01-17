@@ -1,0 +1,25 @@
+# Documentation files
+*.md
+GOOGLE_SHEETS_SETUP.md
+README.md
+
+# Google Apps Script (not needed for deployment)
+google-apps-script.js
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+.env.local
