@@ -50,7 +50,7 @@ function handleSubmit(event) {
     submitBtn.innerHTML = '<span class="loader"></span>';
 
     // IMPORTANT: Replace this URL with your Google Apps Script web app URL
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxUGMj-mXPTwpmVW9mq_lW2XIDN460J9rqbJ2GGSTE-qaYrxbAtCDj1QLPvlM3tHOpR/exec';
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzHifRBXrusxlDgNzr91NDkB8PBm8YP1SxakOs-YyFLVJi2r7SlfIw30Zr1Q9F3Rz6_/exec';
 
     // Prepare data to send
     const data = {
