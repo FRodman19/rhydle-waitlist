@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Email Confirmed | Rhydle</title>
+    <meta name="description" content="Your email has been verified. You can now log in on the Rhydle app.">
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,700;1,6..72,400;1,6..72,700&family=Public+Sans:wght@300;400;600&family=Fraunces:opsz,wght@9..144,700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#070706",
+                        "primary": "#F9D406",
+                        "surface": "#0C0C0A",
+                        "on-surface": "#F0EFE8",
+                        "secondary": "#9C9B94"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Public Sans", "sans-serif"],
+                        "display": ["Fraunces", "serif"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        @keyframes check-draw {
+            from { stroke-dashoffset: 48; }
+            to { stroke-dashoffset: 0; }
+        }
+        @keyframes ring-scale {
+            0% { transform: scale(0.6); opacity: 0; }
+            60% { transform: scale(1.05); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        @keyframes fade-up {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-ring {
+            animation: ring-scale 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        .animate-check {
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+            animation: check-draw 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.35s forwards;
+        }
+        .animate-fade-up {
+            opacity: 0;
+            animation: fade-up 0.5s ease forwards;
+        }
+        .animate-fade-up-1 { animation-delay: 0.5s; }
+        .animate-fade-up-2 { animation-delay: 0.65s; }
+        .animate-fade-up-3 { animation-delay: 0.8s; }
+        .animate-fade-up-4 { animation-delay: 0.95s; }
+    </style>
+</head>
+<body class="selection:bg-primary selection:text-background">
+
+<div class="glimmer-field" id="glimmerField"></div>
+
+<!-- ====== NAV ====== -->
+<nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 py-6 bg-background/80 backdrop-blur-xl border-b border-white/5">
+    <a href="index.html" class="text-2xl font-bold tracking-tighter text-primary font-display">Rhydle</a>
+    <a href="index.html" class="text-secondary hover:text-primary transition-colors text-sm font-serif-auth italic flex items-center gap-2">
+        <span class="material-symbols-outlined text-sm">arrow_back</span>
+        Back to Home
+    </a>
+</nav>
+
+<!-- ====== CONFIRMED ====== -->
+<main class="relative min-h-screen flex items-center justify-center px-6 pt-20">
+    <div class="max-w-md w-full text-center space-y-10">
+
+        <!-- Checkmark icon -->
+        <div class="flex justify-center">
+            <div class="w-24 h-24 border-2 border-primary flex items-center justify-center animate-ring premium-glow">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <path class="animate-check" d="M10 20 L17 27 L30 13" stroke="#F9D406" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Heading -->
+        <div class="space-y-4 animate-fade-up animate-fade-up-1">
+            <h1 class="font-serif-auth text-[clamp(2rem,5vw,3rem)] leading-tight tracking-tight">
+                Email <span class="italic text-primary font-bold">Confirmed!</span>
+            </h1>
+            <p class="text-secondary text-lg leading-relaxed max-w-sm mx-auto">
+                Your email has been verified successfully. You can now log in on the Rhydle app.
+            </p>
+        </div>
+
+        <!-- Open App button -->
+        <div class="animate-fade-up animate-fade-up-2">
+            <a href="performancetracker://callback/confirm"
+               class="inline-block w-full bg-primary text-background px-8 py-4 sharp-btn font-bold text-sm uppercase tracking-widest hover:bg-white transition-colors">
+                Open Rhydle App
+            </a>
+        </div>
+
+        <!-- Play Store fallback -->
+        <div class="animate-fade-up animate-fade-up-3 space-y-3">
+            <p class="text-secondary text-sm">Don't have the app yet?</p>
+            <a href="#" class="inline-flex items-center gap-2 text-primary hover:text-white transition-colors text-sm font-semibold group">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.807 1.626a1 1 0 010 1.732l-2.807 1.626L15.206 12l2.492-2.492zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/>
+                </svg>
+                Get it on Google Play
+            </a>
+        </div>
+
+        <!-- Subtle divider and reassurance -->
+        <div class="animate-fade-up animate-fade-up-4 pt-4">
+            <div class="border-t border-white/5 pt-8">
+                <p class="text-white/20 text-[10px] uppercase tracking-[0.4em]">You're all set. Welcome to Rhydle.</p>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
