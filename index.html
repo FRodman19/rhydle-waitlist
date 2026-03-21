@@ -1,253 +1,436 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html class="dark" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RHYDLE - See Which Ventures Actually Make Money</title>
-    <meta name="description"
-        content="For solopreneurs managing multiple projects. Finally know what's profitable—without spreadsheets.">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Rhydle | Know Your Real Profit Today</title>
+    <meta name="description" content="You run multiple hustles but don't know your real profit. Rhydle gives you one screen, one number, one truth. Coming soon to the Play Store.">
+    <meta property="og:title" content="Rhydle | Know Your Real Profit Today">
+    <meta property="og:description" content="Stop guessing your profit. Track every business you run in 30 seconds a day.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,700;1,6..72,400;1,6..72,700&family=Public+Sans:wght@300;400;600&family=Fraunces:opsz,wght@9..144,700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#070706",
+                        "primary": "#F9D406",
+                        "surface": "#0C0C0A",
+                        "on-surface": "#F0EFE8",
+                        "secondary": "#9C9B94"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Public Sans", "sans-serif"],
+                        "display": ["Fraunces", "serif"]
+                    }
+                },
+            },
+        }
+    </script>
 </head>
+<body class="selection:bg-primary selection:text-background">
 
-<body>
+<div class="glimmer-field" id="glimmerField"></div>
 
-    <!-- Hero Section - Full Width Grid -->
-    <section class="hero-section">
-        <!-- Logo - Top Left -->
-        <div class="logo">RHYDLE</div>
+<!-- ====== NAV ====== -->
+<nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 py-6 bg-background/80 backdrop-blur-xl border-b border-white/5">
+    <div class="text-2xl font-bold tracking-tighter text-primary font-display">Rhydle</div>
+    <div class="hidden md:flex items-center gap-12 font-serif-auth text-sm italic">
+        <a class="text-primary" href="#start">Home</a>
+        <a class="text-secondary hover:text-primary transition-colors" href="#skepticism">The Problem</a>
+        <a class="text-secondary hover:text-primary transition-colors" href="#how-it-works">Process</a>
+        <a class="text-secondary hover:text-primary transition-colors" href="#personas">For You</a>
+    </div>
+    <button class="bg-primary text-background px-8 py-2.5 sharp-btn font-bold text-xs uppercase tracking-widest hover:bg-white transition-colors" onclick="scrollToCTA()">Join the Waitlist</button>
+</nav>
 
-        <div class="hero-grid">
-            <!-- Left Column: Text + Form -->
-            <div class="hero-left">
-                <h1 class="hero-title">
-                    See Which Ventures<br>
-                    Actually Make Money
-                </h1>
+<!-- ====== MAIN ====== -->
+<main class="relative pt-20 overflow-hidden">
+    <div class="journey-line hidden md:block"></div>
 
-                <ul class="hero-benefits">
-                    <li>Track revenue across all your projects in one dashboard</li>
-                    <li>Know which platforms actually drive profit—not just traffic</li>
-                    <li>Stop guessing. Start knowing.</li>
-                    <li>Built for solopreneurs managing multiple ventures</li>
-                </ul>
-
-                <form class="hero-form" id="waitlist-form" onsubmit="handleSubmit(event)">
-                    <div class="form-row">
-                        <input type="email" class="form-input" placeholder="Email address..." name="email" required>
-                    </div>
-
-                    <button type="submit" class="btn-primary">
-                        <span class="btn-main-text">GET EARLY ACCESS</span>
-                    </button>
-
-                    <div class="form-trust">
-                        Limited to 100 beta testers · Free during beta
-                    </div>
-                </form>
+    <!-- ====== HERO ====== -->
+    <section class="narrative-block min-h-screen justify-center" id="start">
+        <div class="max-w-5xl space-y-10 w-full">
+            <div class="inline-flex items-center gap-4 px-6 py-2 border border-primary/20 bg-primary/5 text-primary text-[0.7rem] font-semibold tracking-[0.2em] uppercase mx-auto">
+                <span class="material-symbols-outlined text-primary text-sm">smartphone</span>
+                Coming soon to the Play Store
             </div>
 
-            <!-- Right Column: Phone Mockup -->
-            <div class="hero-right">
-                <img src="phone.png" alt="RHYDLE Mobile App" class="hero-illustration">
-            </div>
-        </div>
-    </section>
+            <h1 class="font-serif-auth text-[clamp(2.5rem,7vw,5.5rem)] leading-[1.1] tracking-tight">
+                Stop guessing your profit. <br/><span class="italic font-bold"><mark class="bg-primary text-background px-2 py-1">Start knowing it.</mark></span>
+            </h1>
 
-    <!-- Problem Section - Dark Background -->
-    <section class="section-dark problem-section">
-        <div class="container">
-            <h2 class="section-title">Sound Familiar?</h2>
+            <p class="font-body text-secondary text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                You check Shopify, then your bank, then a spreadsheet that hasn't been updated since last week. Rhydle replaces all of that with 30 seconds and one honest number: your actual profit today.
+            </p>
 
-            <div class="problem-grid">
-                <div class="problem-card" data-number="01">
-                    <h3 class="card-title">Spending on ads but no idea if it's working</h3>
-                    <div class="card-divider"></div>
-                    <p class="card-description">
-                        You're paying for clicks, but are they converting to actual revenue?
-                    </p>
-                </div>
-
-                <div class="problem-card" data-number="02">
-                    <h3 class="card-title">Juggling spreadsheets to track projects</h3>
-                    <div class="card-divider"></div>
-                    <p class="card-description">
-                        Revenue in one sheet, expenses in another. No single source of truth.
-                    </p>
-                </div>
-
-                <div class="problem-card" data-number="03">
-                    <h3 class="card-title">Can't tell which venture is profitable</h3>
-                    <div class="card-divider"></div>
-                    <p class="card-description">
-                        All your projects seem busy, but which one actually makes money?
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Solution Section - White Card Container -->
-    <section class="solution-card">
-        <div class="container">
-            <h2 class="section-title">One Dashboard. All Your Ventures.</h2>
-
-            <div class="solution-grid">
-                <div class="solution-card-item" data-number="01">
-                    <h3 class="card-title">Compare Performance</h3>
-                    <div class="card-divider"></div>
-                    <p class="card-description">
-                        See all your projects side-by-side. Revenue, expenses, ROI—at a glance.
-                        No more switching between tabs or hunting through spreadsheets.
-                    </p>
-                </div>
-
-                <div class="solution-card-item" data-number="02">
-                    <h3 class="card-title">Track Platform ROI</h3>
-                    <div class="card-divider"></div>
-                    <p class="card-description">
-                        Which platform actually drives profit? YouTube? Instagram? Facebook Ads?
-                        Stop guessing. See the numbers. Shift budget to what works.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section - Dark Background -->
-    <section class="section-dark faq-section">
-        <div class="container">
-            <h2 class="section-title">Questions? Answers.</h2>
-
-            <div class="faq-list">
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFaq(this)">
-                        <span>When will the beta launch?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            We're launching in Q1 2025. Early waitlist members get first access.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFaq(this)">
-                        <span>How much will it cost?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Free during beta. After launch, pricing starts at $19/month.
-                            Beta testers get lifetime 50% discount.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFaq(this)">
-                        <span>Is my data safe?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Yes. We use encryption and never share your data. Export or delete anytime.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFaq(this)">
-                        <span>What platforms do you support?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            YouTube, TikTok, Instagram, Facebook, LinkedIn. More coming based on feedback.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFaq(this)">
-                        <span>What if I only have one project?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Still useful! But the app shines when comparing multiple ventures.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA + Footer - White Card Container -->
-    <section class="cta-card">
-        <div class="container">
-            <h2 class="section-title">Ready to Stop Guessing?</h2>
-
-            <form class="cta-form" onsubmit="handleSubmit(event)">
-                <input type="email" class="form-input" placeholder="Email address..." name="email" required>
-
-                <select class="form-select" name="projects" required>
-                    <option value="" disabled selected>How many projects do you manage?</option>
-                    <option value="1">1 project</option>
-                    <option value="2-3">2-3 projects</option>
-                    <option value="4-5">4-5 projects</option>
-                    <option value="6+">6+ projects</option>
-                </select>
-
-                <button type="submit" class="btn-primary">
-                    Join now
-                </button>
-
-                <div class="form-trust">
-                    Limited to 100 spots
-                </div>
+            <form class="flex flex-col md:flex-row items-center justify-center gap-0 w-full max-w-xl mx-auto mt-10" onsubmit="handleSubmit(event)">
+                <input type="email" name="email" required autocomplete="email"
+                       class="w-full md:flex-1 bg-surface border border-white/10 text-white px-6 py-4 focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-white/20"
+                       placeholder="Enter your business email"/>
+                <button type="submit" class="w-full md:w-auto bg-primary text-background px-8 py-4 sharp-btn font-bold text-sm uppercase tracking-widest hover:bg-white transition-colors whitespace-nowrap">Join the Waitlist</button>
             </form>
 
-            <div class="card-divider-full"></div>
+            <div class="mt-16 relative w-full aspect-video obsidian-glass border-primary/30 overflow-hidden premium-glow">
+                <iframe
+                    src="https://www.youtube.com/embed/rzXPmop3mPg?autoplay=1&mute=1&loop=1&playlist=rzXPmop3mPg&controls=1&modestbranding=1&rel=0&showinfo=0"
+                    class="absolute inset-0 w-full h-full"
+                    frameborder="0"
+                    allow="autoplay; encrypted-media"
+                    allowfullscreen
+                    title="Rhydle Product Demo">
+                </iframe>
+            </div>
 
-            <footer class="final-footer">
-                <div class="footer-brand">
-                    <div class="footer-logo">RHYDLE</div>
-                    <div class="footer-tagline">Track. Analyze. Optimize.</div>
-                </div>
-                <div class="footer-links">
-                    <a href="#about">About</a>
-                    <span class="footer-divider">·</span>
-                    <a href="#privacy">Privacy</a>
-                    <span class="footer-divider">·</span>
-                    <a href="#terms">Terms</a>
-                    <span class="footer-divider">·</span>
-                    <span>© 2026 RHYDLE</span>
-                </div>
-            </footer>
         </div>
     </section>
 
-    <!-- Success Modal -->
-    <div class="modal" id="successModal">
-        <div class="modal-overlay" onclick="closeModal()"></div>
-        <div class="modal-content">
-            <div class="modal-icon">✓</div>
-            <h3 class="modal-title">You're on the list!</h3>
-            <p class="modal-text">
-                Check your email for confirmation. We'll notify you when beta opens.
+    <!-- ====== QUOTE ====== -->
+    <section class="narrative-block py-20 md:py-32">
+        <div class="max-w-3xl w-full text-center">
+            <span class="material-symbols-outlined text-primary text-4xl mb-6 opacity-30">format_quote</span>
+            <p class="font-serif-auth text-[clamp(1.5rem,4vw,2.5rem)] italic leading-relaxed mb-6 text-white/90">"If you don't know your numbers, you don't know your business."</p>
+            <p class="font-body text-secondary text-sm uppercase tracking-widest">— Marcus Lemonis, <span class="text-white/40">The Profit</span></p>
+        </div>
+    </section>
+
+    <!-- ====== THE PROBLEM ====== -->
+    <section class="narrative-block" id="skepticism">
+        <div class="step-node mb-12"></div>
+        <div class="max-w-6xl space-y-24 md:space-y-40 w-full">
+            <h2 class="font-serif-auth text-[clamp(2rem,5vw,3.5rem)] leading-tight italic">
+                Sound <span class="text-primary not-italic font-bold">familiar?</span>
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center text-left">
+                <div class="obsidian-glass p-12 space-y-6 hover:border-primary/40 transition-colors order-2 md:order-1 relative">
+                    <div class="absolute -top-1 -left-1 w-6 h-6 border-t border-l border-primary"></div>
+                    <div class="w-12 h-12 border border-primary/30 flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-primary">tab</span>
+                    </div>
+                    <h3 class="font-serif-auth text-3xl font-bold text-primary">14 tabs open. Still no answer.</h3>
+                    <p class="text-secondary leading-relaxed text-lg italic">"You check Shopify. Then your bank app. Then WhatsApp for that payment confirmation. Then that spreadsheet you swore you'd update last week. An hour later, you still don't know if you're actually making money."</p>
+                    <p class="text-secondary leading-relaxed">The information exists. It's just scattered across a dozen platforms that were never designed to talk to each other. You're not disorganized — the system is.</p>
+                </div>
+                <div class="order-1 md:order-2">
+                    <div class="overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
+                        <img alt="Frustrated entrepreneur at laptop with too many tabs" class="w-full aspect-[4/5] object-cover opacity-60" src="frustated.jpg"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center text-left">
+                <div class="order-1">
+                    <div class="overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
+                        <img alt="Calculator and messy financial notes" class="w-full aspect-[4/5] object-cover opacity-60" src="calculator.jpg"/>
+                    </div>
+                </div>
+                <div class="obsidian-glass p-12 space-y-6 hover:border-primary/40 transition-colors order-2 relative">
+                    <div class="absolute -top-1 -right-1 w-6 h-6 border-t border-r border-primary"></div>
+                    <div class="w-12 h-12 border border-primary/30 flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-primary">calculate</span>
+                    </div>
+                    <h3 class="font-serif-auth text-3xl font-bold text-primary">Revenue isn't profit. But you've been treating it that way.</h3>
+                    <p class="text-secondary leading-relaxed text-lg italic">"You see $2,000 come in and feel good. But after ads, shipping, fees, and that tool subscription you forgot about — you actually kept $600. You just didn't know it until now."</p>
+                    <p class="text-secondary leading-relaxed">Most people running side businesses know what they earned. Almost nobody knows what they kept. That gap is where businesses quietly fail.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== HOW IT WORKS ====== -->
+    <section class="narrative-block" id="how-it-works">
+        <div class="step-node mb-12"></div>
+        <div class="max-w-6xl w-full">
+            <h2 class="font-serif-auth text-[clamp(2rem,5vw,3.5rem)] mb-6 text-center">It takes <span class="italic text-primary font-bold">30 seconds.</span></h2>
+            <p class="text-secondary text-lg max-w-2xl mx-auto mb-20 text-center">No setup wizards. No bank integrations. No learning curve. Just open it and start.</p>
+
+            <div class="mb-20 overflow-hidden max-w-4xl mx-auto">
+                <img alt="Rhydle Interface Preview" class="w-full aspect-video object-cover" src="page.jpg"/>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-0">
+                <div class="obsidian-glass p-12 text-left border-r-0 group hover:bg-primary/5 transition-colors">
+                    <span class="text-primary font-bold text-xs uppercase tracking-widest block mb-6">Step 01</span>
+                    <h4 class="font-serif-auth text-2xl mb-4 font-bold">Name your hustle</h4>
+                    <p class="text-secondary text-sm leading-relaxed">Create a project for each business you run. Online store, freelance gig, side hustle — each one gets its own space.</p>
+                </div>
+                <div class="obsidian-glass p-12 text-left border-r-0 border-l-0 group hover:bg-primary/5 transition-colors">
+                    <span class="text-primary font-bold text-xs uppercase tracking-widest block mb-6">Step 02</span>
+                    <h4 class="font-serif-auth text-2xl mb-4 font-bold">Log what happened today</h4>
+                    <p class="text-secondary text-sm leading-relaxed">Type what you made. Type what you spent. That's it. 30 seconds while your coffee brews.</p>
+                </div>
+                <div class="obsidian-glass p-12 text-left border-l-0 group hover:bg-primary/5 transition-colors">
+                    <span class="text-primary font-bold text-xs uppercase tracking-widest block mb-6">Step 03</span>
+                    <h4 class="font-serif-auth text-2xl mb-4 font-bold">See your real profit</h4>
+                    <p class="text-secondary text-sm leading-relaxed">Not revenue. Profit. Across every project, every day. You'll finally know where your money actually goes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== THE DIFFERENCE ====== -->
+    <section class="bg-primary text-background py-40 px-6 relative overflow-hidden flex items-center justify-center min-h-[60vh]">
+        <div class="max-w-5xl mx-auto text-center relative z-20">
+            <span class="font-body font-bold uppercase tracking-[0.3em] text-[0.7rem] block mb-8">The difference</span>
+            <h2 class="font-serif-auth text-[clamp(2.5rem,7vw,5rem)] leading-none font-bold tracking-tighter mb-10 italic">
+                Revenue is what comes in. <span class="not-italic">Profit is what you keep.</span>
+            </h2>
+            <p class="font-body text-xl md:text-3xl max-w-3xl mx-auto font-medium leading-relaxed opacity-95">
+                Most tools show you revenue. Rhydle shows you what's left after everything is paid. That's the number that actually matters — and it's the one nobody tracks.
             </p>
-            <button class="btn-primary" onclick="closeModal()">Got it</button>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-10 select-none">
+            <span class="font-display text-[clamp(15rem,50vw,70rem)] leading-none tracking-tighter transform">PROFIT</span>
+        </div>
+    </section>
+
+    <!-- ====== WHO IS IT FOR ====== -->
+    <section class="narrative-block" id="personas">
+        <div class="step-node mb-12"></div>
+        <div class="max-w-6xl w-full">
+            <h2 class="font-serif-auth text-[clamp(2rem,5vw,3.5rem)] mb-6 text-center">Built for people who <span class="italic text-primary font-bold">do too much.</span></h2>
+            <p class="text-secondary text-lg max-w-2xl mx-auto mb-20 text-center">If you've ever thought "I think I'm making money but I'm not sure" — this is for you.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-0">
+                <div class="obsidian-glass p-10 text-left border-r-0 border-b-0 lg:border-b group hover:bg-primary/5 transition-colors">
+                    <h4 class="font-serif-auth text-xl mb-4 font-bold text-primary">Freelancers</h4>
+                    <p class="text-secondary text-sm leading-relaxed">"I have 4 clients paying in different currencies and I honestly don't know which one is worth my time anymore."</p>
+                </div>
+                <div class="obsidian-glass p-10 text-left border-r-0 lg:border-r-0 border-b-0 lg:border-b group hover:bg-primary/5 transition-colors">
+                    <h4 class="font-serif-auth text-xl mb-4 font-bold text-primary">Online Sellers</h4>
+                    <p class="text-secondary text-sm leading-relaxed">"My store says I made $3k this month but after ads, shipping, and platform fees I have no idea what I actually kept."</p>
+                </div>
+                <div class="obsidian-glass p-10 text-left border-r-0 border-b-0 lg:border-b group hover:bg-primary/5 transition-colors">
+                    <h4 class="font-serif-auth text-xl mb-4 font-bold text-primary">Side Hustlers</h4>
+                    <p class="text-secondary text-sm leading-relaxed">"I do deliveries, sell online, and bake on weekends. The money comes in from everywhere and I track none of it properly."</p>
+                </div>
+                <div class="obsidian-glass p-10 text-left border-b-0 lg:border-b group hover:bg-primary/5 transition-colors">
+                    <h4 class="font-serif-auth text-xl mb-4 font-bold text-primary">Shop Owners</h4>
+                    <p class="text-secondary text-sm leading-relaxed">"I scribble daily sales in a notebook. I know roughly what I make but I've never seen a real weekly profit number."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FEATURES ====== -->
+    <section class="narrative-block" id="features">
+        <div class="step-node mb-12"></div>
+        <div class="max-w-6xl w-full">
+            <h2 class="font-serif-auth text-[clamp(2rem,5vw,3.5rem)] mb-6 text-center">What changes when you <span class="italic text-primary font-bold">actually know.</span></h2>
+            <p class="text-secondary text-lg max-w-2xl mx-auto mb-20 text-center">These aren't features. They're what happens after a week of using Rhydle.</p>
+            <div class="grid md:grid-cols-2 gap-8 text-left">
+                <div class="obsidian-glass p-12 space-y-6">
+                    <span class="material-symbols-outlined text-primary text-4xl">insights</span>
+                    <h4 class="font-serif-auth text-2xl font-bold">You stop guessing</h4>
+                    <p class="text-secondary text-base leading-relaxed">No more "I think I'm profitable." Open Rhydle and see your actual profit after expenses. One number. Every project. Right now.</p>
+                </div>
+                <div class="obsidian-glass p-12 space-y-6">
+                    <span class="material-symbols-outlined text-primary text-4xl">account_tree</span>
+                    <h4 class="font-serif-auth text-2xl font-bold">You see what's actually working</h4>
+                    <p class="text-secondary text-base leading-relaxed">When each business has its own project, you finally see which one earns and which one just keeps you busy.</p>
+                </div>
+                <div class="obsidian-glass p-12 space-y-6">
+                    <span class="material-symbols-outlined text-primary text-4xl">timer</span>
+                    <h4 class="font-serif-auth text-2xl font-bold">You build a daily habit</h4>
+                    <p class="text-secondary text-base leading-relaxed">30 seconds a day. That's less than checking Instagram. But it changes how you make every business decision.</p>
+                </div>
+                <div class="obsidian-glass p-12 space-y-6">
+                    <span class="material-symbols-outlined text-primary text-4xl">lightbulb</span>
+                    <h4 class="font-serif-auth text-2xl font-bold">You spot the leaks</h4>
+                    <p class="text-secondary text-base leading-relaxed">That subscription you forgot about. The ad spend that isn't converting. You'll notice things you've been ignoring for months.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== WHAT RHYDLE IS & ISN'T ====== -->
+    <section class="narrative-block" id="expectations">
+        <div class="step-node mb-12"></div>
+        <div class="max-w-5xl w-full">
+            <h2 class="font-serif-auth text-[clamp(2rem,5vw,3.5rem)] mb-6 text-center">Let's be <span class="italic text-primary font-bold">honest.</span></h2>
+            <p class="text-secondary text-lg max-w-2xl mx-auto mb-20 text-center">Before you sign up, you should know exactly what you're getting — and what you're not.</p>
+
+            <div class="grid md:grid-cols-2 gap-0 text-left">
+                <!-- WHAT RHYDLE IS -->
+                <div class="obsidian-glass p-12 space-y-8 border-r-0">
+                    <h3 class="font-serif-auth text-2xl font-bold text-primary flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        Rhydle is
+                    </h3>
+                    <ul class="space-y-5">
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-primary text-lg mt-0.5" style="font-variation-settings: 'FILL' 1;">check</span>
+                            <p class="text-secondary text-sm leading-relaxed"><span class="text-white font-semibold">A daily profit tracker.</span> You log what you earned and what you spent. It gives you the one number that matters.</p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-primary text-lg mt-0.5" style="font-variation-settings: 'FILL' 1;">check</span>
+                            <p class="text-secondary text-sm leading-relaxed"><span class="text-white font-semibold">Manual by design.</span> You type in your own numbers. That's not a shortcut we skipped — it's the whole point. You see what you enter.</p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-primary text-lg mt-0.5" style="font-variation-settings: 'FILL' 1;">check</span>
+                            <p class="text-secondary text-sm leading-relaxed"><span class="text-white font-semibold">Built for multiple businesses.</span> Each hustle gets its own project. You see them separately and together.</p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-primary text-lg mt-0.5" style="font-variation-settings: 'FILL' 1;">check</span>
+                            <p class="text-secondary text-sm leading-relaxed"><span class="text-white font-semibold">Portable.</span> Export everything to Excel whenever you want. Your data is never locked in.</p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-primary text-lg mt-0.5" style="font-variation-settings: 'FILL' 1;">check</span>
+                            <p class="text-secondary text-sm leading-relaxed"><span class="text-white font-semibold">Simple on purpose.</span> No 50-tab dashboards. No learning curve. Open it, log your day, close it. Done.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- WHAT RHYDLE ISN'T -->
+                <div class="obsidian-glass p-12 space-y-8 border-l-0">
+                    <h3 class="font-serif-auth text-2xl font-bold text-white/50 flex items-center gap-3">
+                        <span class="material-symbols-outlined text-white/40">block</span>
+                        Rhydle isn't
+                    </h3>
+                    <ul class="space-y-5">
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-white/30 text-lg mt-0.5">close</span>
+                            <p class="text-secondary text-sm leading-relaxed"><span class="text-white/60 font-semibold">Not an accounting tool.</span> We don't do invoicing, tax filing, or payroll. Use Rhydle alongside your accountant, not instead of one.</p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-white/30 text-lg mt-0.5">close</span>
+                            <p class="text-secondary text-sm leading-relaxed"><span class="text-white/60 font-semibold">Not automatic.</span> We don't sync your bank or pull transactions. If you don't log it, it doesn't exist. That's the discipline that makes it work.</p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-white/30 text-lg mt-0.5">close</span>
+                            <p class="text-secondary text-sm leading-relaxed"><span class="text-white/60 font-semibold">Not magic.</span> Rhydle won't fix your business. But it will show you exactly where the money goes — what you do with that is up to you.</p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-white/30 text-lg mt-0.5">close</span>
+                            <p class="text-secondary text-sm leading-relaxed"><span class="text-white/60 font-semibold">Not useful if you skip days.</span> The data is only as good as your consistency. Miss a week and the picture is incomplete. Show up daily and it's powerful.</p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-white/30 text-lg mt-0.5">close</span>
+                            <p class="text-secondary text-sm leading-relaxed"><span class="text-white/60 font-semibold">Not trying to trap you.</span> We never ask for bank credentials. Export your data anytime. If Rhydle stops being useful, leave — no hard feelings.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== TESTIMONIALS ====== -->
+    <section class="narrative-block" id="social">
+        <div class="max-w-5xl w-full space-y-8">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="obsidian-glass p-10 text-left relative">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-4 opacity-40">format_quote</span>
+                    <p class="font-serif-auth text-lg italic mb-6 leading-relaxed">"I sell on Etsy and do catering on weekends. I thought I was making $2,500 a month. Turns out I was keeping $900 after all my costs. I would never have known without logging it daily."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-primary/20 border border-primary/40 flex items-center justify-center text-primary font-bold text-sm">MR</div>
+                        <div>
+                            <p class="font-bold text-white text-sm">Maria R.</p>
+                            <p class="text-secondary text-xs">Online seller & caterer, Mexico City</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="obsidian-glass p-10 text-left relative">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-4 opacity-40">format_quote</span>
+                    <p class="font-serif-auth text-lg italic mb-6 leading-relaxed">"I run a barbershop and sell grooming products online. Before Rhydle, I had no idea which side was actually profitable. Turns out my online store was barely breaking even because of shipping."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-primary/20 border border-primary/40 flex items-center justify-center text-primary font-bold text-sm">JA</div>
+                        <div>
+                            <p class="font-bold text-white text-sm">James A.</p>
+                            <p class="text-secondary text-xs">Barber & online seller, London</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="obsidian-glass p-10 text-left relative premium-glow max-w-2xl mx-auto">
+                <span class="material-symbols-outlined text-primary text-3xl mb-4 opacity-40">format_quote</span>
+                <p class="font-serif-auth text-lg italic mb-6 leading-relaxed">"I do graphic design, food deliveries, and fix phones. Three different incomes, three different expense patterns. Rhydle is the first thing that showed me all of it on one screen."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 bg-primary/20 border border-primary/40 flex items-center justify-center text-primary font-bold text-sm">AO</div>
+                    <div>
+                        <p class="font-bold text-white text-sm">Amara O.</p>
+                        <p class="text-secondary text-xs">Designer & multi-hustler, Lagos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FINAL CTA ====== -->
+    <section class="narrative-block min-h-[80vh] justify-center relative" id="final-cta">
+        <div class="max-w-4xl space-y-12">
+            <h2 class="font-serif-auth text-[clamp(2.5rem,6vw,5rem)] leading-[1.1] font-bold">One honest <span class="italic text-primary font-bold">question.</span></h2>
+            <p class="text-secondary text-xl max-w-2xl mx-auto font-body font-light leading-relaxed">Do you know your actual profit right now — not revenue, not what your dashboard says, but what you actually kept today across everything you run?</p>
+            <p class="text-white text-lg max-w-2xl mx-auto font-body leading-relaxed">If the answer is no, you're not alone. Most people running multiple things don't. Rhydle exists so you can.</p>
+            <form class="flex flex-col md:flex-row items-center justify-center gap-0 w-full max-w-xl mx-auto pt-8" onsubmit="handleSubmit(event)">
+                <input type="email" name="email" required autocomplete="email"
+                       class="w-full md:flex-1 bg-surface border border-white/10 text-white px-6 py-4 focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-white/20"
+                       placeholder="Enter your email"/>
+                <button type="submit" class="w-full md:w-auto bg-primary text-background px-8 py-4 sharp-btn font-bold text-sm uppercase tracking-widest hover:bg-white transition-colors whitespace-nowrap">Join the Waitlist</button>
+            </form>
+            <p class="text-white/30 text-[10px] uppercase tracking-[0.5em] font-bold">Free to join. We'll email you once when it's ready.</p>
+        </div>
+    </section>
+</main>
+
+<!-- ====== FOOTER ====== -->
+<footer class="bg-background border-t border-white/5 py-24 px-10">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-16">
+        <div class="space-y-6">
+            <div class="text-primary font-bold text-4xl font-display">Rhydle</div>
+            <p class="font-serif-auth italic text-secondary text-xl">Know your real profit. Every day.</p>
+            <p class="text-[10px] uppercase tracking-widest text-white/20 mt-12">&copy; 2026 Rhydle Corp. All Rights Reserved.</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-20">
+            <div class="space-y-6">
+                <span class="text-[0.6rem] font-bold uppercase tracking-widest text-primary">Rhydle</span>
+                <ul class="space-y-3 text-sm text-secondary">
+                    <li><a class="hover:text-primary transition-colors" href="#">Manifesto</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">The Process</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="privacy-policy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="space-y-6">
+                <span class="text-[0.6rem] font-bold uppercase tracking-widest text-primary">Support</span>
+                <ul class="space-y-3 text-sm text-secondary">
+                    <li><a class="hover:text-primary transition-colors" href="#">Alpha Access</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Data Export Help</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="terms-of-service.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="space-y-6">
+                <span class="text-[0.6rem] font-bold uppercase tracking-widest text-primary">Connect</span>
+                <ul class="space-y-3 text-sm text-secondary">
+                    <li><a class="hover:text-primary transition-colors" href="#">Twitter / X</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">LinkedIn</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Contact Us</a></li>
+                </ul>
+            </div>
         </div>
     </div>
+</footer>
 
-    <script src="script.js"></script>
+<!-- ====== SUCCESS MODAL ====== -->
+<div class="fixed inset-0 z-[9000] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300" id="successModal">
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeModal()"></div>
+    <div class="relative z-10 bg-surface border border-primary/30 p-14 max-w-[400px] w-[90%] text-center shadow-2xl scale-95 translate-y-3 transition-all duration-300" id="modalContent">
+        <div class="w-16 h-16 border border-primary flex items-center justify-center mx-auto mb-6 modal-icon">
+            <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">check</span>
+        </div>
+        <h3 class="font-serif-auth text-2xl font-bold mb-2">You're in.</h3>
+        <p class="text-secondary mb-8">We'll email you once when Rhydle is ready. No spam. Just the invite.</p>
+        <button class="px-9 py-3.5 bg-primary text-background sharp-btn font-bold text-xs uppercase tracking-widest hover:bg-white transition-colors" onclick="closeModal()">Got it</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
-
 </html>
+l>

@@ -1,103 +1,101 @@
 // ===================================
-// RHYDLE WAITLIST - INTERACTIONS
+// RHYDLE WAITLIST — CINEMATIC PARTICLES
 // ===================================
 
-// Header scroll effect
-const header = document.getElementById('header');
-let lastScroll = 0;
+// ── Glimmer Field + Particles ──
+(function initParticles() {
+    const field = document.getElementById('glimmerField');
+    if (!field) return;
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
+    const density = 32;
+    const cols = Math.ceil(window.innerWidth / density);
+    const rows = Math.ceil(window.innerHeight / density);
 
-    if (currentScroll > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
+    // Grid-aligned glimmer dots
+    for (let i = 0; i < 40; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'glimmer-dot';
+        const randX = Math.floor(Math.random() * cols) * density;
+        const randY = Math.floor(Math.random() * rows) * density;
+
+        dot.style.left = `${randX - 1.5}px`;
+        dot.style.top = `${randY - 1.5}px`;
+
+        const delay = Math.random() * 8;
+        const duration = 3 + Math.random() * 4;
+
+        dot.style.animation = `glimmer-pulse ${duration}s ease-in-out ${delay}s infinite`;
+        field.appendChild(dot);
     }
 
-    lastScroll = currentScroll;
-});
+    // Cinematic floating particles
+    for (let i = 0; i < 25; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'cinematic-particle';
 
-// FAQ Accordion
-function toggleFaq(button) {
-    const faqItem = button.closest('.faq-item');
-    const isActive = faqItem.classList.contains('active');
+        const size = 1 + Math.random() * 2;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
 
-    // Close all FAQ items
-    document.querySelectorAll('.faq-item').forEach(item => {
-        item.classList.remove('active');
-    });
+        const startX = Math.random() * 100;
+        const startY = Math.random() * 100;
+        particle.style.left = `${startX}%`;
+        particle.style.top = `${startY}%`;
 
-    // Open clicked item if it wasn't already active
-    if (!isActive) {
-        faqItem.classList.add('active');
+        const driftX = (Math.random() - 0.5) * 150;
+        const driftY = (Math.random() - 0.5) * 150;
+        particle.style.setProperty('--drift-x', `${driftX}px`);
+        particle.style.setProperty('--drift-y', `${driftY}px`);
+
+        const duration = 15 + Math.random() * 25;
+        const delay = Math.random() * -20;
+
+        particle.style.animationDuration = `${duration}s`;
+        particle.style.animationDelay = `${delay}s`;
+
+        field.appendChild(particle);
     }
-}
+})();
 
-// Form submission handler
+// ── Google Apps Script URL ──
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzHifRBXrusxlDgNzr91NDkB8PBm8YP1SxakOs-YyFLVJi2r7SlfIw30Zr1Q9F3Rz6_/exec';
+
+// ── Form Submission ──
 function handleSubmit(event) {
     event.preventDefault();
 
     const form = event.target;
     const formData = new FormData(form);
     const email = formData.get('email');
-    const projects = formData.get('projects');
 
-    // Get the submit button and show loader
-    const submitBtn = form.querySelector('.btn-primary');
+    const submitBtn = form.querySelector('button[type="submit"]');
     const originalBtnContent = submitBtn.innerHTML;
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<span class="loader"></span>';
 
-    // IMPORTANT: Replace this URL with your Google Apps Script web app URL
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzHifRBXrusxlDgNzr91NDkB8PBm8YP1SxakOs-YyFLVJi2r7SlfIw30Zr1Q9F3Rz6_/exec';
-
-    // Prepare data to send
     const data = {
         email: email,
-        projects: projects || 'Not specified',
         timestamp: new Date().toISOString(),
-        page: 'Hero Form'
+        page: 'Waitlist Form'
     };
 
-    // Send to Google Sheets
     fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
-        headers: {
-            'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
     })
         .then(() => {
-            console.log('Waitlist Signup:', data);
-
-            // Store in localStorage as backup
             const signups = JSON.parse(localStorage.getItem('waitlist_signups') || '[]');
             signups.push(data);
             localStorage.setItem('waitlist_signups', JSON.stringify(signups));
 
-            // Show success modal
             showModal();
-
-            // Reset form and button
             form.reset();
             submitBtn.disabled = false;
             submitBtn.innerHTML = originalBtnContent;
-
-            // Track conversion (add your analytics code here)
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'conversion', {
-                    'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL',
-                    'value': 1.0,
-                    'currency': 'USD'
-                });
-            }
         })
-        .catch(error => {
-            console.error('Error submitting form:', error);
-            // Still show success modal even if submission fails
-            // Data is backed up in localStorage
+        .catch(() => {
             showModal();
             form.reset();
             submitBtn.disabled = false;
@@ -105,15 +103,11 @@ function handleSubmit(event) {
         });
 }
 
-// Modal functions
+// ── Modal ──
 function showModal() {
     const modal = document.getElementById('successModal');
     modal.classList.add('active');
-
-    // Auto-close after 3 seconds
-    setTimeout(() => {
-        closeModal();
-    }, 3000);
+    setTimeout(() => closeModal(), 3000);
 }
 
 function closeModal() {
@@ -121,197 +115,27 @@ function closeModal() {
     modal.classList.remove('active');
 }
 
-// Close modal on background click
-document.getElementById('successModal').addEventListener('click', (e) => {
-    if (e.target.id === 'successModal') {
-        closeModal();
-    }
-});
+// ── Scroll to CTA ──
+function scrollToCTA() {
+    const cta = document.getElementById('final-cta');
+    if (cta) cta.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
 
-// Intersection Observer for scroll animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate-on-scroll');
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-// Observe sections for animations
-document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('.section');
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-
-    // Animate problem cards
-    const problemCards = document.querySelectorAll('.problem-card');
-    problemCards.forEach((card, index) => {
-        card.style.animationDelay = `${index * 0.1}s`;
-        observer.observe(card);
-    });
-
-    // Animate feature sections
-    const features = document.querySelectorAll('.feature');
-    features.forEach((feature, index) => {
-        feature.style.animationDelay = `${index * 0.15}s`;
-        observer.observe(feature);
-    });
-
-    // Animate bars on scroll
-    const bars = document.querySelectorAll('.bar');
-    bars.forEach(bar => {
-        const barObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.width = entry.target.style.getPropertyValue('--value');
-                    barObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        // Reset width for animation
-        const originalWidth = bar.style.getPropertyValue('--value');
-        bar.style.width = '0';
-        bar.style.setProperty('--value', originalWidth);
-
-        barObserver.observe(bar);
-    });
-});
-
-// Keyboard navigation for FAQ
+// ── Event Listeners ──
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        // Close all FAQ items
-        document.querySelectorAll('.faq-item.active').forEach(item => {
-            item.classList.remove('active');
-        });
-
-        // Close modal
-        closeModal();
-    }
+    if (e.key === 'Escape') closeModal();
 });
 
-// Form validation enhancement
-document.querySelectorAll('.form-input').forEach(input => {
-    input.addEventListener('blur', () => {
-        if (input.value && input.validity.valid) {
-            input.style.borderColor = 'var(--success)';
-        } else if (input.value && !input.validity.valid) {
-            input.style.borderColor = 'var(--error)';
-        }
-    });
-
-    input.addEventListener('focus', () => {
-        input.style.borderColor = 'var(--accent)';
-    });
-});
-
-// Prevent form double submission
-let isSubmitting = false;
-
-document.querySelectorAll('.waitlist-form').forEach(form => {
-    form.addEventListener('submit', (e) => {
-        if (isSubmitting) {
-            e.preventDefault();
-            return;
-        }
-
-        isSubmitting = true;
-
-        // Re-enable after 2 seconds
-        setTimeout(() => {
-            isSubmitting = false;
-        }, 2000);
-    });
-});
-
-// Add smooth scroll to anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+        const target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 });
 
-// Performance: Lazy load images (if you add images later)
-if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.add('loaded');
-                imageObserver.unobserve(img);
-            }
-        });
-    });
-
-    document.querySelectorAll('img[data-src]').forEach(img => {
-        imageObserver.observe(img);
-    });
-}
-
-// Analytics helper (ready for Google Analytics, Plausible, etc.)
-function trackEvent(eventName, eventData = {}) {
-    // Google Analytics 4
-    if (typeof gtag !== 'undefined') {
-        gtag('event', eventName, eventData);
-    }
-
-    // Plausible
-    if (typeof plausible !== 'undefined') {
-        plausible(eventName, { props: eventData });
-    }
-
-    // Console log for debugging
-    console.log('Event tracked:', eventName, eventData);
-}
-
-// Track CTA clicks
-document.querySelectorAll('.btn-primary, .btn-secondary').forEach(button => {
-    button.addEventListener('click', () => {
-        const buttonText = button.textContent.trim();
-        trackEvent('cta_click', {
-            button_text: buttonText,
-            location: button.closest('section')?.className || 'unknown'
-        });
-    });
-});
-
-// Track FAQ interactions
-document.querySelectorAll('.faq-question').forEach(button => {
-    button.addEventListener('click', () => {
-        const question = button.querySelector('span').textContent;
-        trackEvent('faq_click', {
-            question: question
-        });
-    });
-});
-
-// Track time on page
-let startTime = Date.now();
-
-window.addEventListener('beforeunload', () => {
-    const timeSpent = Math.round((Date.now() - startTime) / 1000);
-    trackEvent('time_on_page', {
-        seconds: timeSpent
-    });
-});
-
-// Console welcome message
-console.log('%c🚀 RHYDLE', 'font-size: 24px; font-weight: bold; color: #FF6B2C;');
-console.log('%cTrack. Analyze. Optimize.', 'font-size: 14px; color: #666;');
-console.log('%cInterested in our tech stack? Check out our docs!', 'font-size: 12px; color: #999;');
+// ── Console ──
+console.log('%cRHYDLE', 'font-size: 24px; font-weight: bold; color: #F9D406;');
+console.log('%cYour business. Your numbers. Your truth.', 'font-size: 14px; color: #666;');

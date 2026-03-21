@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Privacy Policy | Rhydle</title>
+    <meta name="description" content="Rhydle Privacy Policy — how we collect, use, and protect your information.">
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,700;1,6..72,400;1,6..72,700&family=Public+Sans:wght@300;400;600&family=Fraunces:opsz,wght@9..144,700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#070706",
+                        "primary": "#F9D406",
+                        "surface": "#0C0C0A",
+                        "on-surface": "#F0EFE8",
+                        "secondary": "#9C9B94"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Public Sans", "sans-serif"],
+                        "display": ["Fraunces", "serif"]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="selection:bg-primary selection:text-background">
+
+<!-- ====== NAV ====== -->
+<nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 py-6 bg-background/80 backdrop-blur-xl border-b border-white/5">
+    <a href="index.html" class="text-2xl font-bold tracking-tighter text-primary font-display">Rhydle</a>
+    <a href="index.html" class="text-secondary hover:text-primary transition-colors text-sm font-serif-auth italic flex items-center gap-2">
+        <span class="material-symbols-outlined text-sm">arrow_back</span>
+        Back to Home
+    </a>
+</nav>
+
+<!-- ====== CONTENT ====== -->
+<main class="relative pt-32 pb-24 px-6">
+    <article class="max-w-3xl mx-auto legal-content">
+
+        <header class="mb-16 text-center">
+            <h1 class="font-serif-auth text-[clamp(2rem,5vw,3.5rem)] leading-tight tracking-tight mb-4">Privacy Policy</h1>
+            <p class="text-secondary text-sm">Effective Date: March 7, 2026</p>
+        </header>
+
+        <div class="space-y-12 text-secondary text-[15px] leading-relaxed">
+
+            <p>This Privacy Policy describes how Rhydle ("we," "us," or "our") collects, uses, and protects your information when you use the Rhydle mobile application ("App"). We are committed to protecting your privacy and being transparent about our data practices.</p>
+            <p>By using the App, you consent to the practices described in this Privacy Policy. If you do not agree with this policy, please do not use the App.</p>
+
+            <!-- Section 1 -->
+            <section>
+                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">1. Information We Collect</h2>
+
+                <h3 class="font-serif-auth text-lg font-bold text-on-surface mb-4">1.1 Information You Provide</h3>
+                <p class="mb-4">When you use Rhydle, you may provide the following information:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong class="text-on-surface">Account information:</strong> Email address, display name, and password when you create an account.</li>
+                    <li><strong class="text-on-surface">Financial data:</strong> Income amounts, expense amounts, project names, channel names, and category labels you enter manually. All financial data is self-reported by you.</li>
+                    <li><strong class="text-on-surface">Project information:</strong> Project names, start dates, currency preferences, goals, and notes.</li>
+                    <li><strong class="text-on-surface">Feedback:</strong> Any text you submit through our in-app feedback form or surveys.</li>
+                </ul>
+
+                <h3 class="font-serif-auth text-lg font-bold text-on-surface mt-8 mb-4">1.2 Information Collected Automatically</h3>
+                <p class="mb-4">When you use the App, we use Firebase Analytics (a Google service) to automatically collect anonymous usage data about how you interact with the App's interface. This includes:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong class="text-on-surface">UI interaction data:</strong> Which screens you visit, which buttons and features you use, and how you navigate through the App.</li>
+                    <li><strong class="text-on-surface">Device information:</strong> Device model, operating system version, and unique device identifiers.</li>
+                    <li><strong class="text-on-surface">Session data:</strong> App open/close events, session duration, and frequency of use.</li>
+                    <li><strong class="text-on-surface">Crash and performance data:</strong> Error logs and diagnostic information to help us fix bugs and improve stability.</li>
+                    <li><strong class="text-on-surface">General location:</strong> Country or region derived from your IP address. We do not collect precise GPS location.</li>
+                </ul>
+
+                <div class="obsidian-glass p-6 mt-6 border-l-2 border-primary/40">
+                    <p><strong class="text-primary">Important:</strong> Firebase Analytics tracks only your interaction with the App's interface (screens viewed, buttons tapped, features used). It does not collect, read, or transmit any of your financial data, project content, or personal entries. Your business data stays in Supabase and is never shared with Firebase.</p>
+                </div>
+            </section>
+
+            <!-- Section 2 -->
+            <section>
+                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">2. How We Use Your Information</h2>
+                <p class="mb-4">We use the information we collect for the following purposes:</p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm border border-white/10">
+                        <thead>
+                            <tr class="border-b border-white/10 bg-white/5">
+                                <th class="text-left p-4 text-on-surface font-semibold">Purpose</th>
+                                <th class="text-left p-4 text-on-surface font-semibold">Data Used</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/5">
+                            <tr><td class="p-4">Provide core App functionality (tracking, reports, export)</td><td class="p-4">Financial data you enter, project information</td></tr>
+                            <tr><td class="p-4">Create and manage your account</td><td class="p-4">Email, display name, password</td></tr>
+                            <tr><td class="p-4">Improve the App and develop new features</td><td class="p-4">Usage data, crash data, feedback</td></tr>
+                            <tr><td class="p-4">Respond to your inquiries and feedback</td><td class="p-4">Email, feedback text</td></tr>
+                            <tr><td class="p-4">Send important notifications (security alerts, Terms changes)</td><td class="p-4">Email, push notification tokens</td></tr>
+                            <tr><td class="p-4">Ensure App security and prevent abuse</td><td class="p-4">Device information, usage patterns</td></tr>
+                            <tr><td class="p-4">Analyze aggregate trends to improve the product</td><td class="p-4">Anonymized and aggregated usage data</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Section 3 -->
+            <section>
+                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">3. How We Store and Protect Your Data</h2>
+
+                <h3 class="font-serif-auth text-lg font-bold text-on-surface mb-4">3.1 Data Storage</h3>
+                <p class="mb-4">Your data is stored on secure cloud servers powered by Supabase. This means:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Your financial entries, projects, and account data are stored online in our cloud database.</li>
+                    <li>Your data is accessible from your account whenever you are logged in.</li>
+                    <li>You can export all of your data at any time using the App's built-in export features.</li>
+                </ul>
+                <p class="mt-4"><strong class="text-primary">Your data is not trapped.</strong> You maintain full control over your data at all times, including the ability to export it or delete your account entirely.</p>
+
+                <h3 class="font-serif-auth text-lg font-bold text-on-surface mt-8 mb-4">3.2 Data Security</h3>
+                <p class="mb-4">We implement industry-standard security measures to protect your information, including:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Encryption of data in transit using TLS/SSL.</li>
+                    <li>Encryption of data at rest on our cloud servers.</li>
+                    <li>Secure authentication protocols managed through Supabase Authentication.</li>
+                    <li>Row-level security policies to ensure your data is only accessible to you.</li>
+                </ul>
+                <p class="mt-4">While we take reasonable measures to protect your data, no method of electronic transmission or storage is 100% secure. We cannot guarantee absolute security.</p>
+            </section>
+
+            <!-- Section 4 -->
+            <section>
+                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">4. Data Sharing and Disclosure</h2>
+                <p class="mb-4"><strong class="text-primary">We do not sell your personal data.</strong> We do not share your financial data with third parties for marketing purposes.</p>
+                <p class="mb-4">We may share information only in the following limited circumstances:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong class="text-on-surface">Service providers:</strong> We use third-party services (Supabase for cloud infrastructure, and Firebase Analytics/Crashlytics by Google for anonymous usage tracking and crash reporting) that process data on our behalf to help us operate the App. These providers are contractually obligated to protect your data.</li>
+                    <li><strong class="text-on-surface">Legal requirements:</strong> We may disclose information if required to do so by law, regulation, legal process, or governmental request.</li>
+                    <li><strong class="text-on-surface">Business transfers:</strong> If Rhydle is acquired or merged with another entity, your information may be transferred as part of that transaction. We will notify you before any such change.</li>
+                    <li><strong class="text-on-surface">With your consent:</strong> We will only share data with additional parties if you explicitly authorize us to do so.</li>
+                </ul>
+            </section>
+
+            <!-- Section 5 -->
+            <section>
+                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">5. Third-Party Services We Use</h2>
+                <p class="mb-4">The App uses the following third-party services to operate:</p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm border border-white/10">
+                        <thead>
+                            <tr class="border-b border-white/10 bg-white/5">
+                                <th class="text-left p-4 text-on-surface font-semibold">Service</th>
+                                <th class="text-left p-4 text-on-surface font-semibold">Purpose</th>
+                                <th class="text-left p-4 text-on-surface font-semibold">Data Shared</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/5">
+                            <tr><td class="p-4">Supabase</td><td class="p-4">Authentication, cloud database, data storage</td><td class="p-4">Account info, app data</td></tr>
+                            <tr><td class="p-4">Firebase Analytics (Google)</td><td class="p-4">Anonymous UI usage tracking and app performance monitoring</td><td class="p-4">Screen views, feature usage, device info, session data. No financial data is shared.</td></tr>
+                            <tr><td class="p-4">Firebase Crashlytics (Google)</td><td class="p-4">Identifying and fixing app crashes and errors</td><td class="p-4">Crash logs, device info</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="mt-4">Each third-party service operates under its own privacy policy. We encourage you to review their policies.</p>
+            </section>
+
+            <!-- Section 6 -->
+            <section>
+                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">6. Your Rights and Choices</h2>
+                <p class="mb-4">You have the following rights regarding your data:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong class="text-on-surface">Access:</strong> You can view all data you have entered into the App at any time.</li>
+                    <li><strong class="text-on-surface">Export:</strong> You can export all of your data using the App's built-in export features (CSV, XLSX formats). Your data is never trapped inside the App.</li>
+                    <li><strong class="text-on-surface">Correction:</strong> You can edit any entry or project data at any time within the App.</li>
+                    <li><strong class="text-on-surface">Account deletion:</strong> You can delete your account at any time. When you delete your account, all associated data is permanently removed from our servers. To delete your account, use the account deletion option in the App's settings or contact us at support@rhydle.com.</li>
+                    <li><strong class="text-on-surface">Opt-out of analytics:</strong> You may opt out of analytics collection through your device's privacy settings.</li>
+                    <li><strong class="text-on-surface">Withdraw consent:</strong> You can withdraw consent for any optional data processing at any time through the App's settings.</li>
+                </ul>
+                <p class="mt-4">If you are located in the European Economic Area (EEA), United Kingdom, or another jurisdiction with applicable data protection laws, you may have additional rights, including the right to lodge a complaint with your local data protection authority.</p>
+            </section>
+
+            <!-- Section 7 -->
+            <section>
+                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">7. Data Retention and Deletion</h2>
+                <p class="mb-4"><strong class="text-primary">We do not retain your data beyond what is necessary to provide the service to you.</strong></p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong class="text-on-surface">While your account is active:</strong> Your data is stored to provide the App's features.</li>
+                    <li><strong class="text-on-surface">When you delete your account:</strong> All your personal data and financial records are permanently deleted from our servers within 30 days of your request.</li>
+                    <li><strong class="text-on-surface">Usage and analytics data:</strong> Retained only in anonymized, aggregated form and cannot be traced back to you.</li>
+                    <li><strong class="text-on-surface">Feedback submissions:</strong> Retained for product improvement purposes unless you request deletion.</li>
+                </ul>
+                <p class="mt-4">You are never locked in. You can export all of your data and delete your account at any time.</p>
+            </section>
+
+            <!-- Section 8 -->
+            <section>
+                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">8. Children's Privacy</h2>
+                <p>Rhydle is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that we have inadvertently collected data from a child under 13, we will take steps to delete it promptly.</p>
+                <p class="mt-4">If you are a parent or guardian and believe your child has provided personal information to us, please contact us at support@rhydle.com.</p>
+            </section>
+
+            <!-- Section 9 -->
+            <section>
+                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">9. International Data Transfers</h2>
+                <p>Your information may be stored and processed in countries other than your own, including countries where our cloud infrastructure provider (Supabase) operates. By using the App, you consent to the transfer of your information to countries that may have different data protection standards than your country of residence.</p>
+                <p class="mt-4">Where required by applicable law, we ensure appropriate safeguards are in place for international data transfers.</p>
+            </section>
+
+            <!-- Section 10 -->
+            <section>
+                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">10. Changes to This Privacy Policy</h2>
+                <p class="mb-4">We may update this Privacy Policy from time to time. When we make material changes, we will:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Update the "Effective Date" at the top of this policy.</li>
+                    <li>Notify you through the App or by other reasonable means.</li>
+                    <li>Where required by law, seek your consent for material changes.</li>
+                </ul>
+                <p class="mt-4">We encourage you to review this Privacy Policy periodically.</p>
+            </section>
+
+            <!-- Section 11 -->
+            <section>
+                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">11. Additional Disclosures for California Residents</h2>
+                <p class="mb-4">If you are a California resident, you may have additional rights under the California Consumer Privacy Act (CCPA), including:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>The right to know what personal information we collect, use, and disclose.</li>
+                    <li>The right to request deletion of your personal information.</li>
+                    <li>The right to opt out of the sale of your personal information. <strong class="text-primary">We do not sell personal information.</strong></li>
+                    <li>The right to non-discrimination for exercising your privacy rights.</li>
+                </ul>
+                <p class="mt-4">To exercise these rights, contact us at support@rhydle.com.</p>
+            </section>
+
+            <!-- Section 12 -->
+            <section>
+                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">12. Future Features</h2>
+                <p>We may introduce additional features in future versions of the App, such as integrations with social media platforms or other third-party services. If and when such features are introduced, we will update this Privacy Policy accordingly and notify you before any new data collection or sharing takes place. No additional data will ever be collected or shared without your knowledge and consent.</p>
+            </section>
+
+            <!-- Section 13 -->
+            <section>
+                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">13. Contact Us</h2>
+                <p>If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at:</p>
+                <p class="mt-4"><strong class="text-primary">Email:</strong> <a href="mailto:support@rhydle.com" class="text-primary hover:underline">support@rhydle.com</a></p>
+                <p class="mt-4">We aim to respond to all privacy-related inquiries within 5 business days.</p>
+            </section>
+
+            <hr class="border-white/10">
+            <p class="text-xs text-white/30 text-center">Last updated: March 7, 2026</p>
+
+        </div>
+    </article>
+</main>
+
+<!-- ====== FOOTER ====== -->
+<footer class="bg-background border-t border-white/5 py-16 px-10">
+    <div class="max-w-3xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="text-primary font-bold text-2xl font-display">Rhydle</div>
+        <div class="flex items-center gap-8 text-sm text-secondary">
+            <a class="hover:text-primary transition-colors" href="privacy-policy.html">Privacy Policy</a>
+            <a class="hover:text-primary transition-colors" href="terms-of-service.html">Terms of Service</a>
+            <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+        </div>
+        <p class="text-[10px] uppercase tracking-widest text-white/20">&copy; 2026 Rhydle Corp.</p>
+    </div>
+</footer>
+
+</body>
+</html>
