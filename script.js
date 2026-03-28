@@ -1,61 +1,7 @@
 // ===================================
-// RHYDLE WAITLIST — CINEMATIC PARTICLES
+// RHYDLE WAITLIST — v2.0
+// Clean animations, no particles
 // ===================================
-
-// ── Glimmer Field + Particles ──
-(function initParticles() {
-    const field = document.getElementById('glimmerField');
-    if (!field) return;
-
-    const density = 32;
-    const cols = Math.ceil(window.innerWidth / density);
-    const rows = Math.ceil(window.innerHeight / density);
-
-    // Grid-aligned glimmer dots
-    for (let i = 0; i < 40; i++) {
-        const dot = document.createElement('div');
-        dot.className = 'glimmer-dot';
-        const randX = Math.floor(Math.random() * cols) * density;
-        const randY = Math.floor(Math.random() * rows) * density;
-
-        dot.style.left = `${randX - 1.5}px`;
-        dot.style.top = `${randY - 1.5}px`;
-
-        const delay = Math.random() * 8;
-        const duration = 3 + Math.random() * 4;
-
-        dot.style.animation = `glimmer-pulse ${duration}s ease-in-out ${delay}s infinite`;
-        field.appendChild(dot);
-    }
-
-    // Cinematic floating particles
-    for (let i = 0; i < 25; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'cinematic-particle';
-
-        const size = 1 + Math.random() * 2;
-        particle.style.width = `${size}px`;
-        particle.style.height = `${size}px`;
-
-        const startX = Math.random() * 100;
-        const startY = Math.random() * 100;
-        particle.style.left = `${startX}%`;
-        particle.style.top = `${startY}%`;
-
-        const driftX = (Math.random() - 0.5) * 150;
-        const driftY = (Math.random() - 0.5) * 150;
-        particle.style.setProperty('--drift-x', `${driftX}px`);
-        particle.style.setProperty('--drift-y', `${driftY}px`);
-
-        const duration = 15 + Math.random() * 25;
-        const delay = Math.random() * -20;
-
-        particle.style.animationDuration = `${duration}s`;
-        particle.style.animationDelay = `${delay}s`;
-
-        field.appendChild(particle);
-    }
-})();
 
 // ── Google Apps Script URL ──
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzHifRBXrusxlDgNzr91NDkB8PBm8YP1SxakOs-YyFLVJi2r7SlfIw30Zr1Q9F3Rz6_/exec';
@@ -71,7 +17,12 @@ function handleSubmit(event) {
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalBtnContent = submitBtn.innerHTML;
     submitBtn.disabled = true;
-    submitBtn.innerHTML = '<span class="loader"></span>';
+
+    // Create loader via DOM API
+    submitBtn.textContent = '';
+    const loader = document.createElement('span');
+    loader.className = 'loader';
+    submitBtn.appendChild(loader);
 
     const data = {
         email: email,
@@ -93,14 +44,22 @@ function handleSubmit(event) {
             showModal();
             form.reset();
             submitBtn.disabled = false;
-            submitBtn.innerHTML = originalBtnContent;
+            restoreButton(submitBtn, originalBtnContent);
         })
         .catch(() => {
             showModal();
             form.reset();
             submitBtn.disabled = false;
-            submitBtn.innerHTML = originalBtnContent;
+            restoreButton(submitBtn, originalBtnContent);
         });
+}
+
+// Safely restore button content
+function restoreButton(btn, content) {
+    btn.textContent = '';
+    const temp = document.createElement('template');
+    temp.innerHTML = content;
+    btn.appendChild(temp.content);
 }
 
 // ── Modal ──
@@ -136,6 +95,87 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// ── ANIMATION ENGINE ──
+(function initAnimations() {
+    'use strict';
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    // ── 1. Nav compact on scroll ──
+    const nav = document.getElementById('mainNav');
+    if (nav) {
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('nav-scrolled', window.scrollY > 80);
+        }, { passive: true });
+    }
+
+    // ── 2. Auto-tag elements for scroll reveal ──
+
+    // Quote section
+    const quoteSection = document.querySelector('#start + section');
+    if (quoteSection) {
+        const inner = quoteSection.querySelector('.max-w-3xl');
+        if (inner) inner.classList.add('reveal-up');
+    }
+
+    // Key section headings only (problem, how-it-works, personas, social)
+    ['#skepticism', '#how-it-works', '#personas', '#social', '#final-cta'].forEach(id => {
+        const section = document.querySelector(id);
+        if (!section) return;
+        const h2 = section.querySelector('h2');
+        if (h2) h2.classList.add('reveal-up');
+        const sub = section.querySelector('.section-sub');
+        if (sub) sub.classList.add('reveal-up', 'delay-100');
+    });
+
+    // Step cards only — staggered (how-it-works)
+    const howSection = document.querySelector('#how-it-works');
+    if (howSection) {
+        howSection.querySelectorAll('.card').forEach((card, i) => {
+            card.classList.add('reveal-up');
+            if (i > 0) card.classList.add('delay-' + Math.min(i * 100, 300));
+        });
+    }
+
+    // Testimonial cards — simple reveal, no stagger
+    const socialSection = document.querySelector('#social');
+    if (socialSection) {
+        socialSection.querySelectorAll('.card').forEach(card => {
+            card.classList.add('reveal-up');
+        });
+    }
+
+    // The Difference section content
+    const diffContent = document.querySelector('.profit-watermark');
+    if (diffContent) {
+        const section = diffContent.closest('section');
+        if (section) {
+            const content = section.querySelector('.relative.z-10');
+            if (content) content.classList.add('reveal-up');
+        }
+    }
+
+    // ── 3. IntersectionObserver ──
+    function setupRevealObserver() {
+        const revealEls = document.querySelectorAll('.reveal-up, .profit-watermark');
+        if (!revealEls.length) return;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+        revealEls.forEach(el => observer.observe(el));
+    }
+
+    requestAnimationFrame(() => requestAnimationFrame(setupRevealObserver));
+
+})();
+
 // ── Console ──
-console.log('%cRHYDLE', 'font-size: 24px; font-weight: bold; color: #F9D406;');
-console.log('%cYour business. Your numbers. Your truth.', 'font-size: 14px; color: #666;');
+console.log('%cRHYDLE', 'font-size: 24px; font-weight: 800; color: #EF6D28;');
+console.log('%cYour business. Your numbers. Your truth.', 'font-size: 14px; color: #6E706E;');

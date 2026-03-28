@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -7,227 +7,331 @@
     <meta name="description" content="Rhydle Terms of Service — the rules and guidelines for using the Rhydle app.">
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,700;1,6..72,400;1,6..72,700&family=Public+Sans:wght@300;400;600&family=Fraunces:opsz,wght@9..144,700&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,700&display=swap" rel="stylesheet"/>
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
     <link rel="stylesheet" href="styles.css">
     <script>
         tailwind.config = {
-            darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        "background": "#070706",
-                        "primary": "#F9D406",
-                        "surface": "#0C0C0A",
-                        "on-surface": "#F0EFE8",
-                        "secondary": "#9C9B94"
+                        flame: { 1:'#FEF6F1', 2:'#FDE9DA', 3:'#FBD5BA', 4:'#F9BE96', 5:'#F6A46E', DEFAULT:'#EF6D28', 7:'#D96123', 8:'#B8521E', 9:'#944219', 10:'#703214', 11:'#4D2310', 12:'#2A140A' },
+                        n: { 1:'#F5F5F3', 2:'#E8E8E5', 3:'#D4D4D0', 4:'#B0B1AF', 5:'#8E8F8E', 6:'#6E706E', 7:'#5A5C5A', 8:'#333433', 9:'#242524', 10:'#1A1B1A', 11:'#131413', 12:'#0C0D0C' },
                     },
                     fontFamily: {
-                        "headline": ["Newsreader", "serif"],
-                        "body": ["Public Sans", "sans-serif"],
-                        "display": ["Fraunces", "serif"]
-                    }
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Fraunces"', 'serif'],
+                    },
                 },
             },
         }
     </script>
 </head>
-<body class="selection:bg-primary selection:text-background">
+<body class="bg-[#FAF9F7] text-n-11 font-sans selection:bg-flame selection:text-white">
 
 <!-- ====== NAV ====== -->
-<nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 py-6 bg-background/80 backdrop-blur-xl border-b border-white/5">
-    <a href="index.html" class="text-2xl font-bold tracking-tighter text-primary font-display">Rhydle</a>
-    <a href="index.html" class="text-secondary hover:text-primary transition-colors text-sm font-serif-auth italic flex items-center gap-2">
-        <span class="material-symbols-outlined text-sm">arrow_back</span>
-        Back to Home
-    </a>
+<nav class="fixed top-0 left-0 right-0 z-50 bg-n-12">
+    <div class="flex items-center justify-between px-6 md:px-12 lg:px-16 py-5">
+        <a href="index.html" class="text-[1.15rem] font-[800] tracking-tight text-flame">RHYDLE</a>
+        <a href="index.html" class="flex items-center gap-2 text-[10px] font-semibold tracking-[1px] uppercase text-n-4 hover:text-flame transition-colors">
+            <i class="ph ph-arrow-left text-sm"></i>
+            Back to Home
+        </a>
+    </div>
 </nav>
 
+<!-- ====== PAGE HEADER ====== -->
+<header class="bg-n-12 pt-28 pb-16 px-6">
+    <div class="max-w-3xl mx-auto">
+        <span class="text-[10px] font-semibold tracking-[1px] uppercase text-flame block mb-4">Legal</span>
+        <h1 class="font-serif italic text-[clamp(2.5rem,6vw,4rem)] font-normal leading-[1.05] text-n-2 mb-4">Terms of Service</h1>
+        <p class="text-n-5 text-sm">Effective Date: <span class="text-n-3">March 7, 2026</span></p>
+    </div>
+</header>
+
 <!-- ====== CONTENT ====== -->
-<main class="relative pt-32 pb-24 px-6">
-    <article class="max-w-3xl mx-auto legal-content">
+<main class="px-6 py-16 md:py-24">
+    <article class="max-w-3xl mx-auto">
 
-        <header class="mb-16 text-center">
-            <h1 class="font-serif-auth text-[clamp(2rem,5vw,3.5rem)] leading-tight tracking-tight mb-4">Terms of Service</h1>
-            <p class="text-secondary text-sm">Effective Date: March 7, 2026</p>
-        </header>
-
-        <div class="space-y-12 text-secondary text-[15px] leading-relaxed">
-
+        <div class="space-y-2 text-n-7 text-[15px] leading-relaxed mb-16 pb-16 border-b border-[#E2E1DD]">
             <p>By downloading, installing, or using the Rhydle mobile application ("App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the App.</p>
-            <p>Rhydle is operated by Rhydle ("we," "us," or "our"). These Terms govern your access to and use of the App, including any content, features, and services offered through it.</p>
+            <p class="pt-3">Rhydle is operated by Rhydle ("we," "us," or "our"). These Terms govern your access to and use of the App, including any content, features, and services offered through it.</p>
+        </div>
+
+        <div class="space-y-16">
 
             <!-- Section 1 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">1. Eligibility</h2>
-                <p>You must be at least 13 years old to use Rhydle. If you are under 18, you represent that you have your parent or legal guardian's permission to use the App. By using the App, you represent and warrant that you meet these eligibility requirements.</p>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">01</span>
+                </div>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">Eligibility</h2>
+                    <p class="text-n-7 text-[15px] leading-relaxed">You must be at least 13 years old to use Rhydle. If you are under 18, you represent that you have your parent or legal guardian's permission to use the App. By using the App, you represent and warrant that you meet these eligibility requirements.</p>
+                </div>
             </section>
 
             <!-- Section 2 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">2. Description of Service</h2>
-                <p class="mb-4">Rhydle is a mobile profit-tracking application designed for freelancers, small business owners, content creators, and e-commerce sellers. The App allows you to:</p>
-                <ul class="list-disc pl-6 space-y-2">
-                    <li>Create and manage business projects.</li>
-                    <li>Log daily income and expenses across categories.</li>
-                    <li>View calculated profit, reports, and performance summaries.</li>
-                    <li>Export financial data for your records.</li>
-                    <li>Archive and restore projects.</li>
-                </ul>
-                <div class="obsidian-glass p-6 mt-6 border-l-2 border-primary/40">
-                    <p>Rhydle is a tracking and organizational tool. <strong class="text-primary">It is not accounting software, tax preparation software, or a financial advisory service.</strong></p>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">02</span>
+                </div>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">Description of Service</h2>
+                    <p class="text-n-7 text-[15px] leading-relaxed">Rhydle is a mobile profit-tracking application designed for freelancers, small business owners, content creators, and e-commerce sellers. The App allows you to:</p>
+                    <ul class="space-y-2 text-n-7 text-[15px]">
+                        <li class="flex items-start gap-3"><i class="ph-fill ph-check-circle text-flame mt-0.5 flex-shrink-0"></i><span>Create and manage business projects.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph-fill ph-check-circle text-flame mt-0.5 flex-shrink-0"></i><span>Log daily income and expenses across categories.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph-fill ph-check-circle text-flame mt-0.5 flex-shrink-0"></i><span>View calculated profit, reports, and performance summaries.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph-fill ph-check-circle text-flame mt-0.5 flex-shrink-0"></i><span>Export financial data for your records.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph-fill ph-check-circle text-flame mt-0.5 flex-shrink-0"></i><span>Archive and restore projects.</span></li>
+                    </ul>
+                    <div class="bg-flame-1 border-l-[3px] border-flame p-5 mt-2">
+                        <p class="text-n-9 text-sm leading-relaxed">Rhydle is a tracking and organizational tool. <strong class="text-n-11">It is not accounting software, tax preparation software, or a financial advisory service.</strong></p>
+                    </div>
                 </div>
             </section>
 
             <!-- Section 3 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">3. Your Account and Data</h2>
-                <p>You may be required to create an account to use the App. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.</p>
-                <p class="mt-4">You are solely responsible for the accuracy of the financial data you enter into the App. Rhydle does not verify, audit, or guarantee the accuracy of any data you provide.</p>
-                <p class="mt-4">Your data is stored on secure cloud servers. You can export all of your data at any time and delete your account whenever you choose. See our <a href="privacy-policy.html" class="text-primary hover:underline">Privacy Policy</a> for full details on data storage and deletion.</p>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">03</span>
+                </div>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">Your Account and Data</h2>
+                    <p class="text-n-7 text-[15px] leading-relaxed">You may be required to create an account to use the App. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.</p>
+                    <p class="text-n-7 text-[15px] leading-relaxed">You are solely responsible for the accuracy of the financial data you enter into the App. Rhydle does not verify, audit, or guarantee the accuracy of any data you provide.</p>
+                    <p class="text-n-7 text-[15px] leading-relaxed">Your data is stored on secure cloud servers. You can export all of your data at any time and delete your account whenever you choose. See our <a href="privacy-policy.html" class="text-flame hover:underline">Privacy Policy</a> for full details on data storage and deletion.</p>
+                </div>
             </section>
 
             <!-- Section 4 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">4. Account Deletion</h2>
-                <p class="mb-4">You have the right to delete your account at any time. When you delete your account:</p>
-                <ul class="list-disc pl-6 space-y-2">
-                    <li>All your personal data and financial records will be permanently removed from our servers.</li>
-                    <li>This action cannot be undone. We recommend exporting your data before deleting your account.</li>
-                    <li>You can delete your account through the App's settings or by contacting us at support@rhydle.com.</li>
-                </ul>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">04</span>
+                </div>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">Account Deletion</h2>
+                    <p class="text-n-7 text-[15px] leading-relaxed">You have the right to delete your account at any time. When you delete your account:</p>
+                    <ul class="space-y-2 text-n-7 text-[15px]">
+                        <li class="flex items-start gap-3"><i class="ph ph-x text-n-4 mt-0.5 flex-shrink-0"></i><span>All your personal data and financial records will be permanently removed from our servers.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph ph-x text-n-4 mt-0.5 flex-shrink-0"></i><span>This action cannot be undone. We recommend exporting your data before deleting your account.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph ph-x text-n-4 mt-0.5 flex-shrink-0"></i><span>You can delete your account through the App's settings or by contacting us at <a href="mailto:support@rhydle.com" class="text-flame hover:underline">support@rhydle.com</a>.</span></li>
+                    </ul>
+                </div>
             </section>
 
             <!-- Section 5 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">5. Acceptable Use</h2>
-                <p class="mb-4">You agree not to:</p>
-                <ul class="list-disc pl-6 space-y-2">
-                    <li>Use the App for any unlawful purpose or in violation of any applicable law.</li>
-                    <li>Attempt to reverse-engineer, decompile, or disassemble the App.</li>
-                    <li>Interfere with or disrupt the App's infrastructure or other users' access.</li>
-                    <li>Use the App to transmit malware, spam, or harmful content.</li>
-                    <li>Misrepresent your identity or impersonate another person.</li>
-                    <li>Use automated tools, bots, or scrapers to access the App.</li>
-                </ul>
-                <p class="mt-4">We reserve the right to suspend or terminate your access if you violate these Terms.</p>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">05</span>
+                </div>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">Acceptable Use</h2>
+                    <p class="text-n-7 text-[15px] leading-relaxed">You agree not to:</p>
+                    <ul class="space-y-2 text-n-7 text-[15px]">
+                        <li class="flex items-start gap-3"><i class="ph ph-prohibit text-n-4 mt-0.5 flex-shrink-0"></i><span>Use the App for any unlawful purpose or in violation of any applicable law.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph ph-prohibit text-n-4 mt-0.5 flex-shrink-0"></i><span>Attempt to reverse-engineer, decompile, or disassemble the App.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph ph-prohibit text-n-4 mt-0.5 flex-shrink-0"></i><span>Interfere with or disrupt the App's infrastructure or other users' access.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph ph-prohibit text-n-4 mt-0.5 flex-shrink-0"></i><span>Use the App to transmit malware, spam, or harmful content.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph ph-prohibit text-n-4 mt-0.5 flex-shrink-0"></i><span>Misrepresent your identity or impersonate another person.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph ph-prohibit text-n-4 mt-0.5 flex-shrink-0"></i><span>Use automated tools, bots, or scrapers to access the App.</span></li>
+                    </ul>
+                    <p class="text-n-7 text-[15px] leading-relaxed">We reserve the right to suspend or terminate your access if you violate these Terms.</p>
+                </div>
             </section>
 
             <!-- Section 6 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">6. Intellectual Property</h2>
-                <p>The App, including its design, code, text, graphics, logos, and all other content, is owned by Rhydle and protected by applicable intellectual property laws. You are granted a limited, non-exclusive, non-transferable, revocable license to use the App for your personal or internal business purposes, subject to these Terms.</p>
-                <p class="mt-4">You may not copy, modify, distribute, sell, or lease any part of the App without our prior written consent.</p>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">06</span>
+                </div>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">Intellectual Property</h2>
+                    <p class="text-n-7 text-[15px] leading-relaxed">The App, including its design, code, text, graphics, logos, and all other content, is owned by Rhydle and protected by applicable intellectual property laws. You are granted a limited, non-exclusive, non-transferable, revocable license to use the App for your personal or internal business purposes, subject to these Terms.</p>
+                    <p class="text-n-7 text-[15px] leading-relaxed">You may not copy, modify, distribute, sell, or lease any part of the App without our prior written consent.</p>
+                </div>
             </section>
 
             <!-- Section 7 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">7. User-Generated Content</h2>
-                <p>You retain ownership of all data, text, and content you enter into the App ("User Content"). By using the App, you grant us a limited license to process and store your User Content solely for the purpose of providing the App's functionality to you.</p>
-                <p class="mt-4">We do not claim ownership of your financial data, project names, notes, or any other information you enter.</p>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">07</span>
+                </div>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">User-Generated Content</h2>
+                    <p class="text-n-7 text-[15px] leading-relaxed">You retain ownership of all data, text, and content you enter into the App ("User Content"). By using the App, you grant us a limited license to process and store your User Content solely for the purpose of providing the App's functionality to you.</p>
+                    <p class="text-n-7 text-[15px] leading-relaxed">We do not claim ownership of your financial data, project names, notes, or any other information you enter.</p>
+                </div>
             </section>
 
             <!-- Section 8 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">8. Data Export and Portability</h2>
-                <p>You may export your data from the App at any time using the built-in export features. Exported data is provided in standard formats (such as CSV or XLSX) for your convenience.</p>
-                <p class="mt-4"><strong class="text-primary">Your data is never trapped.</strong> We encourage you to maintain your own backups of important financial data, and you are free to leave the App with all of your data at any time.</p>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">08</span>
+                </div>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">Data Export and Portability</h2>
+                    <p class="text-n-7 text-[15px] leading-relaxed">You may export your data from the App at any time using the built-in export features. Exported data is provided in standard formats (such as CSV or XLSX) for your convenience.</p>
+                    <div class="bg-flame-1 border-l-[3px] border-flame p-5">
+                        <p class="text-n-9 text-sm leading-relaxed"><strong class="text-flame">Your data is never trapped.</strong> We encourage you to maintain your own backups of important financial data, and you are free to leave the App with all of your data at any time.</p>
+                    </div>
+                </div>
             </section>
 
             <!-- Section 9 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">9. Fees and Subscriptions</h2>
-                <p>Rhydle is currently available as a free application. We may introduce paid features, subscriptions, or premium tiers in the future. If we do, we will clearly disclose pricing before any charges apply, and you will not be charged without your explicit consent.</p>
-                <p class="mt-4">Any in-app purchases or subscriptions will be processed through the applicable app store (Google Play Store or Apple App Store) and are subject to their respective refund policies.</p>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">09</span>
+                </div>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">Fees and Subscriptions</h2>
+                    <p class="text-n-7 text-[15px] leading-relaxed">Rhydle is currently available as a free application. We may introduce paid features, subscriptions, or premium tiers in the future. If we do, we will clearly disclose pricing before any charges apply, and you will not be charged without your explicit consent.</p>
+                    <p class="text-n-7 text-[15px] leading-relaxed">Any in-app purchases or subscriptions will be processed through the applicable app store (Google Play Store or Apple App Store) and are subject to their respective refund policies.</p>
+                </div>
             </section>
 
             <!-- Section 10 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">10. Disclaimers</h2>
-                <p class="mb-4 uppercase text-xs tracking-wider text-white/40">THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
-                <p class="mb-4">Specifically, we do not warrant that:</p>
-                <ul class="list-disc pl-6 space-y-2">
-                    <li>The App will be available at all times without interruption.</li>
-                    <li>The App is free from errors, bugs, or security vulnerabilities.</li>
-                    <li>Any calculations, reports, or insights generated by the App are accurate for tax, legal, or accounting purposes.</li>
-                    <li>The App is a substitute for professional financial, tax, or legal advice.</li>
-                </ul>
-                <div class="obsidian-glass p-6 mt-6 border-l-2 border-primary/40">
-                    <p><strong class="text-primary">Important:</strong> Rhydle is a tracking tool, not a certified financial system. You should consult a qualified professional for tax preparation, accounting compliance, or financial decision-making.</p>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">10</span>
+                </div>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">Disclaimers</h2>
+                    <p class="text-n-5 text-xs tracking-wider uppercase leading-relaxed">The App is provided "as is" and "as available" without warranties of any kind, whether express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
+                    <p class="text-n-7 text-[15px] leading-relaxed">Specifically, we do not warrant that:</p>
+                    <ul class="space-y-2 text-n-7 text-[15px]">
+                        <li class="flex items-start gap-3"><i class="ph ph-minus text-n-4 mt-0.5 flex-shrink-0"></i><span>The App will be available at all times without interruption.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph ph-minus text-n-4 mt-0.5 flex-shrink-0"></i><span>The App is free from errors, bugs, or security vulnerabilities.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph ph-minus text-n-4 mt-0.5 flex-shrink-0"></i><span>Any calculations, reports, or insights generated by the App are accurate for tax, legal, or accounting purposes.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph ph-minus text-n-4 mt-0.5 flex-shrink-0"></i><span>The App is a substitute for professional financial, tax, or legal advice.</span></li>
+                    </ul>
+                    <div class="bg-flame-1 border-l-[3px] border-flame p-5">
+                        <p class="text-n-9 text-sm leading-relaxed"><strong class="text-flame">Important:</strong> Rhydle is a tracking tool, not a certified financial system. You should consult a qualified professional for tax preparation, accounting compliance, or financial decision-making.</p>
+                    </div>
                 </div>
             </section>
 
             <!-- Section 11 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">11. Limitation of Liability</h2>
-                <p>To the maximum extent permitted by applicable law, Rhydle and its officers, employees, and affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, or business opportunities, arising out of or related to your use of the App.</p>
-                <p class="mt-4">Our total liability to you for any claim arising from or related to these Terms or the App shall not exceed the amount you paid us in the twelve (12) months preceding the claim, or fifty US dollars (USD $50), whichever is greater.</p>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">11</span>
+                </div>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">Limitation of Liability</h2>
+                    <p class="text-n-7 text-[15px] leading-relaxed">To the maximum extent permitted by applicable law, Rhydle and its officers, employees, and affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, or business opportunities, arising out of or related to your use of the App.</p>
+                    <p class="text-n-7 text-[15px] leading-relaxed">Our total liability to you for any claim arising from or related to these Terms or the App shall not exceed the amount you paid us in the twelve (12) months preceding the claim, or fifty US dollars (USD $50), whichever is greater.</p>
+                </div>
             </section>
 
             <!-- Section 12 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">12. Indemnification</h2>
-                <p>You agree to indemnify and hold harmless Rhydle and its officers, employees, and affiliates from and against any claims, damages, losses, liabilities, and expenses (including reasonable attorneys' fees) arising out of or related to your use of the App, your violation of these Terms, or your violation of any applicable law.</p>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">12</span>
+                </div>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">Indemnification</h2>
+                    <p class="text-n-7 text-[15px] leading-relaxed">You agree to indemnify and hold harmless Rhydle and its officers, employees, and affiliates from and against any claims, damages, losses, liabilities, and expenses (including reasonable attorneys' fees) arising out of or related to your use of the App, your violation of these Terms, or your violation of any applicable law.</p>
+                </div>
             </section>
 
             <!-- Section 13 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">13. Termination</h2>
-                <p>You may stop using the App at any time by uninstalling it from your device. You may also delete your account and all associated data at any time through the App's settings or by contacting us.</p>
-                <p class="mt-4">We may suspend or terminate your access to the App at any time, with or without notice, for conduct that we believe violates these Terms, is harmful to other users, or is otherwise objectionable.</p>
-                <p class="mt-4">Upon termination, your right to use the App ceases immediately. We recommend exporting your data before deleting your account.</p>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">13</span>
+                </div>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">Termination</h2>
+                    <p class="text-n-7 text-[15px] leading-relaxed">You may stop using the App at any time by uninstalling it from your device. You may also delete your account and all associated data at any time through the App's settings or by contacting us.</p>
+                    <p class="text-n-7 text-[15px] leading-relaxed">We may suspend or terminate your access to the App at any time, with or without notice, for conduct that we believe violates these Terms, is harmful to other users, or is otherwise objectionable.</p>
+                    <p class="text-n-7 text-[15px] leading-relaxed">Upon termination, your right to use the App ceases immediately. We recommend exporting your data before deleting your account.</p>
+                </div>
             </section>
 
             <!-- Section 14 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">14. Changes to These Terms</h2>
-                <p>We may update these Terms from time to time. When we make material changes, we will notify you through the App or by other reasonable means. Your continued use of the App after such notification constitutes acceptance of the updated Terms.</p>
-                <p class="mt-4">We encourage you to review these Terms periodically.</p>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">14</span>
+                </div>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">Changes to These Terms</h2>
+                    <p class="text-n-7 text-[15px] leading-relaxed">We may update these Terms from time to time. When we make material changes, we will notify you through the App or by other reasonable means. Your continued use of the App after such notification constitutes acceptance of the updated Terms.</p>
+                    <p class="text-n-7 text-[15px] leading-relaxed">We encourage you to review these Terms periodically.</p>
+                </div>
             </section>
 
             <!-- Section 15 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">15. Governing Law and Disputes</h2>
-                <p>These Terms shall be governed by and construed in accordance with applicable law, without regard to conflict of law principles. Any disputes arising from or relating to these Terms or the App shall be resolved through good-faith negotiation first. If negotiation fails, disputes shall be submitted to binding arbitration or the courts of competent jurisdiction.</p>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">15</span>
+                </div>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">Governing Law and Disputes</h2>
+                    <p class="text-n-7 text-[15px] leading-relaxed">These Terms shall be governed by and construed in accordance with applicable law, without regard to conflict of law principles. Any disputes arising from or relating to these Terms or the App shall be resolved through good-faith negotiation first. If negotiation fails, disputes shall be submitted to binding arbitration or the courts of competent jurisdiction.</p>
+                </div>
             </section>
 
             <!-- Section 16 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">16. Severability</h2>
-                <p>If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary so that the remaining provisions remain in full force and effect.</p>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">16</span>
+                </div>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">Severability</h2>
+                    <p class="text-n-7 text-[15px] leading-relaxed">If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary so that the remaining provisions remain in full force and effect.</p>
+                </div>
             </section>
 
             <!-- Section 17 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">17. Entire Agreement</h2>
-                <p>These Terms, together with our <a href="privacy-policy.html" class="text-primary hover:underline">Privacy Policy</a>, constitute the entire agreement between you and Rhydle regarding your use of the App and supersede all prior agreements and understandings.</p>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">17</span>
+                </div>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">Entire Agreement</h2>
+                    <p class="text-n-7 text-[15px] leading-relaxed">These Terms, together with our <a href="privacy-policy.html" class="text-flame hover:underline">Privacy Policy</a>, constitute the entire agreement between you and Rhydle regarding your use of the App and supersede all prior agreements and understandings.</p>
+                </div>
             </section>
 
             <!-- Section 18 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">18. Contact Us</h2>
-                <p>If you have questions about these Terms of Service, please contact us at:</p>
-                <p class="mt-4"><strong class="text-primary">Email:</strong> <a href="mailto:support@rhydle.com" class="text-primary hover:underline">support@rhydle.com</a></p>
-                <p class="mt-4">We aim to respond to all inquiries within 5 business days.</p>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">18</span>
+                </div>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">Contact Us</h2>
+                    <p class="text-n-7 text-[15px] leading-relaxed">If you have questions about these Terms of Service, please contact us at:</p>
+                    <div class="bg-white border border-[#E2E1DD] p-6 space-y-2">
+                        <p class="text-n-7 text-sm"><span class="text-n-5 text-[10px] uppercase tracking-[1px] font-semibold block mb-1">Email</span><a href="mailto:support@rhydle.com" class="text-flame hover:underline font-medium">support@rhydle.com</a></p>
+                        <p class="text-n-6 text-xs pt-2">We aim to respond to all inquiries within 5 business days.</p>
+                    </div>
+                </div>
             </section>
 
-            <hr class="border-white/10">
-            <p class="text-xs text-white/30 text-center">Last updated: March 7, 2026</p>
-
         </div>
+
+        <div class="mt-20 pt-10 border-t border-[#E2E1DD] flex flex-col md:flex-row justify-between items-start gap-4">
+            <p class="text-n-5 text-xs uppercase tracking-[2px]">Last updated: March 7, 2026</p>
+            <a href="privacy-policy.html" class="text-flame text-sm hover:underline flex items-center gap-1.5">
+                Read Privacy Policy <i class="ph ph-arrow-right text-sm"></i>
+            </a>
+        </div>
+
     </article>
 </main>
 
 <!-- ====== FOOTER ====== -->
-<footer class="bg-background border-t border-white/5 py-16 px-10">
-    <div class="max-w-3xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-        <div class="text-primary font-bold text-2xl font-display">Rhydle</div>
-        <div class="flex items-center gap-8 text-sm text-secondary">
-            <a class="hover:text-primary transition-colors" href="privacy-policy.html">Privacy Policy</a>
-            <a class="hover:text-primary transition-colors" href="terms-of-service.html">Terms of Service</a>
-            <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+<footer class="bg-n-12 border-t border-n-9 py-12 px-6">
+    <div class="max-w-3xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+        <span class="text-lg font-[800] tracking-tight text-flame">RHYDLE</span>
+        <div class="flex items-center gap-6 text-[11px] font-semibold uppercase tracking-[0.5px] text-n-5">
+            <a class="hover:text-flame transition-colors" href="privacy-policy.html">Privacy Policy</a>
+            <span class="text-n-8">/</span>
+            <a class="hover:text-flame transition-colors" href="terms-of-service.html">Terms of Service</a>
+            <span class="text-n-8">/</span>
+            <a class="hover:text-flame transition-colors" href="index.html">Home</a>
         </div>
-        <p class="text-[10px] uppercase tracking-widest text-white/20">&copy; 2026 Rhydle Corp.</p>
+        <p class="text-[10px] uppercase tracking-[1px] text-n-8">&copy; 2026 Rhydle Corp.</p>
     </div>
 </footer>
 

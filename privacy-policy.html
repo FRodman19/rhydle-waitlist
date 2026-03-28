@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -7,267 +7,358 @@
     <meta name="description" content="Rhydle Privacy Policy — how we collect, use, and protect your information.">
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,700;1,6..72,400;1,6..72,700&family=Public+Sans:wght@300;400;600&family=Fraunces:opsz,wght@9..144,700&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,700&display=swap" rel="stylesheet"/>
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
     <link rel="stylesheet" href="styles.css">
     <script>
         tailwind.config = {
-            darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        "background": "#070706",
-                        "primary": "#F9D406",
-                        "surface": "#0C0C0A",
-                        "on-surface": "#F0EFE8",
-                        "secondary": "#9C9B94"
+                        flame: { 1:'#FEF6F1', 2:'#FDE9DA', 3:'#FBD5BA', 4:'#F9BE96', 5:'#F6A46E', DEFAULT:'#EF6D28', 7:'#D96123', 8:'#B8521E', 9:'#944219', 10:'#703214', 11:'#4D2310', 12:'#2A140A' },
+                        n: { 1:'#F5F5F3', 2:'#E8E8E5', 3:'#D4D4D0', 4:'#B0B1AF', 5:'#8E8F8E', 6:'#6E706E', 7:'#5A5C5A', 8:'#333433', 9:'#242524', 10:'#1A1B1A', 11:'#131413', 12:'#0C0D0C' },
                     },
                     fontFamily: {
-                        "headline": ["Newsreader", "serif"],
-                        "body": ["Public Sans", "sans-serif"],
-                        "display": ["Fraunces", "serif"]
-                    }
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Fraunces"', 'serif'],
+                    },
                 },
             },
         }
     </script>
 </head>
-<body class="selection:bg-primary selection:text-background">
+<body class="bg-[#FAF9F7] text-n-11 font-sans selection:bg-flame selection:text-white">
 
 <!-- ====== NAV ====== -->
-<nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 py-6 bg-background/80 backdrop-blur-xl border-b border-white/5">
-    <a href="index.html" class="text-2xl font-bold tracking-tighter text-primary font-display">Rhydle</a>
-    <a href="index.html" class="text-secondary hover:text-primary transition-colors text-sm font-serif-auth italic flex items-center gap-2">
-        <span class="material-symbols-outlined text-sm">arrow_back</span>
-        Back to Home
-    </a>
+<nav class="fixed top-0 left-0 right-0 z-50 bg-n-12">
+    <div class="flex items-center justify-between px-6 md:px-12 lg:px-16 py-5">
+        <a href="index.html" class="text-[1.15rem] font-[800] tracking-tight text-flame">RHYDLE</a>
+        <a href="index.html" class="flex items-center gap-2 text-[10px] font-semibold tracking-[1px] uppercase text-n-4 hover:text-flame transition-colors">
+            <i class="ph ph-arrow-left text-sm"></i>
+            Back to Home
+        </a>
+    </div>
 </nav>
 
+<!-- ====== PAGE HEADER ====== -->
+<header class="bg-n-12 pt-28 pb-16 px-6">
+    <div class="max-w-3xl mx-auto">
+        <span class="text-[10px] font-semibold tracking-[1px] uppercase text-flame block mb-4">Legal</span>
+        <h1 class="font-serif italic text-[clamp(2.5rem,6vw,4rem)] font-normal leading-[1.05] text-n-2 mb-4">Privacy Policy</h1>
+        <p class="text-n-5 text-sm">Effective Date: <span class="text-n-3">March 7, 2026</span></p>
+    </div>
+</header>
+
 <!-- ====== CONTENT ====== -->
-<main class="relative pt-32 pb-24 px-6">
-    <article class="max-w-3xl mx-auto legal-content">
+<main class="px-6 py-16 md:py-24">
+    <article class="max-w-3xl mx-auto">
 
-        <header class="mb-16 text-center">
-            <h1 class="font-serif-auth text-[clamp(2rem,5vw,3.5rem)] leading-tight tracking-tight mb-4">Privacy Policy</h1>
-            <p class="text-secondary text-sm">Effective Date: March 7, 2026</p>
-        </header>
-
-        <div class="space-y-12 text-secondary text-[15px] leading-relaxed">
-
+        <div class="space-y-3 text-n-7 text-[15px] leading-relaxed mb-16 pb-16 border-b border-[#E2E1DD]">
             <p>This Privacy Policy describes how Rhydle ("we," "us," or "our") collects, uses, and protects your information when you use the Rhydle mobile application ("App"). We are committed to protecting your privacy and being transparent about our data practices.</p>
             <p>By using the App, you consent to the practices described in this Privacy Policy. If you do not agree with this policy, please do not use the App.</p>
+        </div>
+
+        <div class="space-y-16">
 
             <!-- Section 1 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">1. Information We Collect</h2>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">01</span>
+                </div>
+                <div class="space-y-6">
+                    <h2 class="text-xl font-bold text-n-11">Information We Collect</h2>
 
-                <h3 class="font-serif-auth text-lg font-bold text-on-surface mb-4">1.1 Information You Provide</h3>
-                <p class="mb-4">When you use Rhydle, you may provide the following information:</p>
-                <ul class="list-disc pl-6 space-y-2">
-                    <li><strong class="text-on-surface">Account information:</strong> Email address, display name, and password when you create an account.</li>
-                    <li><strong class="text-on-surface">Financial data:</strong> Income amounts, expense amounts, project names, channel names, and category labels you enter manually. All financial data is self-reported by you.</li>
-                    <li><strong class="text-on-surface">Project information:</strong> Project names, start dates, currency preferences, goals, and notes.</li>
-                    <li><strong class="text-on-surface">Feedback:</strong> Any text you submit through our in-app feedback form or surveys.</li>
-                </ul>
+                    <div class="space-y-3">
+                        <h3 class="text-base font-semibold text-n-9">Information You Provide</h3>
+                        <p class="text-n-7 text-[15px] leading-relaxed">When you use Rhydle, you may provide the following information:</p>
+                        <ul class="space-y-2 text-n-7 text-[15px]">
+                            <li class="flex items-start gap-3"><i class="ph ph-dot-outline text-flame mt-1 flex-shrink-0"></i><span><strong class="text-n-9">Account information:</strong> Email address, display name, and password when you create an account.</span></li>
+                            <li class="flex items-start gap-3"><i class="ph ph-dot-outline text-flame mt-1 flex-shrink-0"></i><span><strong class="text-n-9">Financial data:</strong> Income amounts, expense amounts, project names, channel names, and category labels you enter manually. All financial data is self-reported by you.</span></li>
+                            <li class="flex items-start gap-3"><i class="ph ph-dot-outline text-flame mt-1 flex-shrink-0"></i><span><strong class="text-n-9">Project information:</strong> Project names, start dates, currency preferences, goals, and notes.</span></li>
+                            <li class="flex items-start gap-3"><i class="ph ph-dot-outline text-flame mt-1 flex-shrink-0"></i><span><strong class="text-n-9">Feedback:</strong> Any text you submit through our in-app feedback form or surveys.</span></li>
+                        </ul>
+                    </div>
 
-                <h3 class="font-serif-auth text-lg font-bold text-on-surface mt-8 mb-4">1.2 Information Collected Automatically</h3>
-                <p class="mb-4">When you use the App, we use Firebase Analytics (a Google service) to automatically collect anonymous usage data about how you interact with the App's interface. This includes:</p>
-                <ul class="list-disc pl-6 space-y-2">
-                    <li><strong class="text-on-surface">UI interaction data:</strong> Which screens you visit, which buttons and features you use, and how you navigate through the App.</li>
-                    <li><strong class="text-on-surface">Device information:</strong> Device model, operating system version, and unique device identifiers.</li>
-                    <li><strong class="text-on-surface">Session data:</strong> App open/close events, session duration, and frequency of use.</li>
-                    <li><strong class="text-on-surface">Crash and performance data:</strong> Error logs and diagnostic information to help us fix bugs and improve stability.</li>
-                    <li><strong class="text-on-surface">General location:</strong> Country or region derived from your IP address. We do not collect precise GPS location.</li>
-                </ul>
+                    <div class="space-y-3">
+                        <h3 class="text-base font-semibold text-n-9">Information Collected Automatically</h3>
+                        <p class="text-n-7 text-[15px] leading-relaxed">When you use the App, we use Firebase Analytics (a Google service) to automatically collect anonymous usage data about how you interact with the App's interface. This includes:</p>
+                        <ul class="space-y-2 text-n-7 text-[15px]">
+                            <li class="flex items-start gap-3"><i class="ph ph-dot-outline text-flame mt-1 flex-shrink-0"></i><span><strong class="text-n-9">UI interaction data:</strong> Which screens you visit, which buttons and features you use, and how you navigate through the App.</span></li>
+                            <li class="flex items-start gap-3"><i class="ph ph-dot-outline text-flame mt-1 flex-shrink-0"></i><span><strong class="text-n-9">Device information:</strong> Device model, operating system version, and unique device identifiers.</span></li>
+                            <li class="flex items-start gap-3"><i class="ph ph-dot-outline text-flame mt-1 flex-shrink-0"></i><span><strong class="text-n-9">Session data:</strong> App open/close events, session duration, and frequency of use.</span></li>
+                            <li class="flex items-start gap-3"><i class="ph ph-dot-outline text-flame mt-1 flex-shrink-0"></i><span><strong class="text-n-9">Crash and performance data:</strong> Error logs and diagnostic information to help us fix bugs and improve stability.</span></li>
+                            <li class="flex items-start gap-3"><i class="ph ph-dot-outline text-flame mt-1 flex-shrink-0"></i><span><strong class="text-n-9">General location:</strong> Country or region derived from your IP address. We do not collect precise GPS location.</span></li>
+                        </ul>
+                    </div>
 
-                <div class="obsidian-glass p-6 mt-6 border-l-2 border-primary/40">
-                    <p><strong class="text-primary">Important:</strong> Firebase Analytics tracks only your interaction with the App's interface (screens viewed, buttons tapped, features used). It does not collect, read, or transmit any of your financial data, project content, or personal entries. Your business data stays in Supabase and is never shared with Firebase.</p>
+                    <div class="bg-flame-1 border-l-[3px] border-flame p-5">
+                        <p class="text-n-9 text-sm leading-relaxed"><strong class="text-flame">Important:</strong> Firebase Analytics tracks only your interaction with the App's interface. It does not collect, read, or transmit any of your financial data, project content, or personal entries. Your business data stays in Supabase and is never shared with Firebase.</p>
+                    </div>
                 </div>
             </section>
 
             <!-- Section 2 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">2. How We Use Your Information</h2>
-                <p class="mb-4">We use the information we collect for the following purposes:</p>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-sm border border-white/10">
-                        <thead>
-                            <tr class="border-b border-white/10 bg-white/5">
-                                <th class="text-left p-4 text-on-surface font-semibold">Purpose</th>
-                                <th class="text-left p-4 text-on-surface font-semibold">Data Used</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-white/5">
-                            <tr><td class="p-4">Provide core App functionality (tracking, reports, export)</td><td class="p-4">Financial data you enter, project information</td></tr>
-                            <tr><td class="p-4">Create and manage your account</td><td class="p-4">Email, display name, password</td></tr>
-                            <tr><td class="p-4">Improve the App and develop new features</td><td class="p-4">Usage data, crash data, feedback</td></tr>
-                            <tr><td class="p-4">Respond to your inquiries and feedback</td><td class="p-4">Email, feedback text</td></tr>
-                            <tr><td class="p-4">Send important notifications (security alerts, Terms changes)</td><td class="p-4">Email, push notification tokens</td></tr>
-                            <tr><td class="p-4">Ensure App security and prevent abuse</td><td class="p-4">Device information, usage patterns</td></tr>
-                            <tr><td class="p-4">Analyze aggregate trends to improve the product</td><td class="p-4">Anonymized and aggregated usage data</td></tr>
-                        </tbody>
-                    </table>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">02</span>
+                </div>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">How We Use Your Information</h2>
+                    <p class="text-n-7 text-[15px] leading-relaxed">We use the information we collect for the following purposes:</p>
+                    <div class="overflow-x-auto border border-[#E2E1DD]">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="border-b border-[#E2E1DD] bg-[#F4F3EE]">
+                                    <th class="text-left p-4 text-n-9 font-semibold text-xs uppercase tracking-[0.5px]">Purpose</th>
+                                    <th class="text-left p-4 text-n-9 font-semibold text-xs uppercase tracking-[0.5px]">Data Used</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-[#E2E1DD]">
+                                <tr class="bg-white"><td class="p-4 text-n-7">Provide core App functionality (tracking, reports, export)</td><td class="p-4 text-n-6">Financial data you enter, project information</td></tr>
+                                <tr><td class="p-4 text-n-7">Create and manage your account</td><td class="p-4 text-n-6">Email, display name, password</td></tr>
+                                <tr class="bg-white"><td class="p-4 text-n-7">Improve the App and develop new features</td><td class="p-4 text-n-6">Usage data, crash data, feedback</td></tr>
+                                <tr><td class="p-4 text-n-7">Respond to your inquiries and feedback</td><td class="p-4 text-n-6">Email, feedback text</td></tr>
+                                <tr class="bg-white"><td class="p-4 text-n-7">Send important notifications (security alerts, Terms changes)</td><td class="p-4 text-n-6">Email, push notification tokens</td></tr>
+                                <tr><td class="p-4 text-n-7">Ensure App security and prevent abuse</td><td class="p-4 text-n-6">Device information, usage patterns</td></tr>
+                                <tr class="bg-white"><td class="p-4 text-n-7">Analyze aggregate trends to improve the product</td><td class="p-4 text-n-6">Anonymized and aggregated usage data</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </section>
 
             <!-- Section 3 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">3. How We Store and Protect Your Data</h2>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">03</span>
+                </div>
+                <div class="space-y-6">
+                    <h2 class="text-xl font-bold text-n-11">How We Store and Protect Your Data</h2>
 
-                <h3 class="font-serif-auth text-lg font-bold text-on-surface mb-4">3.1 Data Storage</h3>
-                <p class="mb-4">Your data is stored on secure cloud servers powered by Supabase. This means:</p>
-                <ul class="list-disc pl-6 space-y-2">
-                    <li>Your financial entries, projects, and account data are stored online in our cloud database.</li>
-                    <li>Your data is accessible from your account whenever you are logged in.</li>
-                    <li>You can export all of your data at any time using the App's built-in export features.</li>
-                </ul>
-                <p class="mt-4"><strong class="text-primary">Your data is not trapped.</strong> You maintain full control over your data at all times, including the ability to export it or delete your account entirely.</p>
+                    <div class="space-y-3">
+                        <h3 class="text-base font-semibold text-n-9">Data Storage</h3>
+                        <p class="text-n-7 text-[15px] leading-relaxed">Your data is stored on secure cloud servers powered by Supabase. This means:</p>
+                        <ul class="space-y-2 text-n-7 text-[15px]">
+                            <li class="flex items-start gap-3"><i class="ph ph-dot-outline text-flame mt-1 flex-shrink-0"></i><span>Your financial entries, projects, and account data are stored online in our cloud database.</span></li>
+                            <li class="flex items-start gap-3"><i class="ph ph-dot-outline text-flame mt-1 flex-shrink-0"></i><span>Your data is accessible from your account whenever you are logged in.</span></li>
+                            <li class="flex items-start gap-3"><i class="ph ph-dot-outline text-flame mt-1 flex-shrink-0"></i><span>You can export all of your data at any time using the App's built-in export features.</span></li>
+                        </ul>
+                        <div class="bg-flame-1 border-l-[3px] border-flame p-5">
+                            <p class="text-n-9 text-sm leading-relaxed"><strong class="text-flame">Your data is not trapped.</strong> You maintain full control over your data at all times, including the ability to export it or delete your account entirely.</p>
+                        </div>
+                    </div>
 
-                <h3 class="font-serif-auth text-lg font-bold text-on-surface mt-8 mb-4">3.2 Data Security</h3>
-                <p class="mb-4">We implement industry-standard security measures to protect your information, including:</p>
-                <ul class="list-disc pl-6 space-y-2">
-                    <li>Encryption of data in transit using TLS/SSL.</li>
-                    <li>Encryption of data at rest on our cloud servers.</li>
-                    <li>Secure authentication protocols managed through Supabase Authentication.</li>
-                    <li>Row-level security policies to ensure your data is only accessible to you.</li>
-                </ul>
-                <p class="mt-4">While we take reasonable measures to protect your data, no method of electronic transmission or storage is 100% secure. We cannot guarantee absolute security.</p>
+                    <div class="space-y-3">
+                        <h3 class="text-base font-semibold text-n-9">Data Security</h3>
+                        <p class="text-n-7 text-[15px] leading-relaxed">We implement industry-standard security measures to protect your information, including:</p>
+                        <ul class="space-y-2 text-n-7 text-[15px]">
+                            <li class="flex items-start gap-3"><i class="ph-fill ph-check-circle text-flame mt-0.5 flex-shrink-0"></i><span>Encryption of data in transit using TLS/SSL.</span></li>
+                            <li class="flex items-start gap-3"><i class="ph-fill ph-check-circle text-flame mt-0.5 flex-shrink-0"></i><span>Encryption of data at rest on our cloud servers.</span></li>
+                            <li class="flex items-start gap-3"><i class="ph-fill ph-check-circle text-flame mt-0.5 flex-shrink-0"></i><span>Secure authentication protocols managed through Supabase Authentication.</span></li>
+                            <li class="flex items-start gap-3"><i class="ph-fill ph-check-circle text-flame mt-0.5 flex-shrink-0"></i><span>Row-level security policies to ensure your data is only accessible to you.</span></li>
+                        </ul>
+                        <p class="text-n-7 text-[15px] leading-relaxed">While we take reasonable measures to protect your data, no method of electronic transmission or storage is 100% secure. We cannot guarantee absolute security.</p>
+                    </div>
+                </div>
             </section>
 
             <!-- Section 4 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">4. Data Sharing and Disclosure</h2>
-                <p class="mb-4"><strong class="text-primary">We do not sell your personal data.</strong> We do not share your financial data with third parties for marketing purposes.</p>
-                <p class="mb-4">We may share information only in the following limited circumstances:</p>
-                <ul class="list-disc pl-6 space-y-2">
-                    <li><strong class="text-on-surface">Service providers:</strong> We use third-party services (Supabase for cloud infrastructure, and Firebase Analytics/Crashlytics by Google for anonymous usage tracking and crash reporting) that process data on our behalf to help us operate the App. These providers are contractually obligated to protect your data.</li>
-                    <li><strong class="text-on-surface">Legal requirements:</strong> We may disclose information if required to do so by law, regulation, legal process, or governmental request.</li>
-                    <li><strong class="text-on-surface">Business transfers:</strong> If Rhydle is acquired or merged with another entity, your information may be transferred as part of that transaction. We will notify you before any such change.</li>
-                    <li><strong class="text-on-surface">With your consent:</strong> We will only share data with additional parties if you explicitly authorize us to do so.</li>
-                </ul>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">04</span>
+                </div>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">Data Sharing and Disclosure</h2>
+                    <div class="bg-flame-1 border-l-[3px] border-flame p-5">
+                        <p class="text-n-9 text-sm leading-relaxed"><strong class="text-flame">We do not sell your personal data.</strong> We do not share your financial data with third parties for marketing purposes.</p>
+                    </div>
+                    <p class="text-n-7 text-[15px] leading-relaxed">We may share information only in the following limited circumstances:</p>
+                    <ul class="space-y-3 text-n-7 text-[15px]">
+                        <li class="flex items-start gap-3"><i class="ph ph-dot-outline text-flame mt-1 flex-shrink-0"></i><span><strong class="text-n-9">Service providers:</strong> We use Supabase for cloud infrastructure, and Firebase Analytics/Crashlytics by Google for anonymous usage tracking and crash reporting. These providers are contractually obligated to protect your data.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph ph-dot-outline text-flame mt-1 flex-shrink-0"></i><span><strong class="text-n-9">Legal requirements:</strong> We may disclose information if required to do so by law, regulation, legal process, or governmental request.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph ph-dot-outline text-flame mt-1 flex-shrink-0"></i><span><strong class="text-n-9">Business transfers:</strong> If Rhydle is acquired or merged with another entity, your information may be transferred as part of that transaction. We will notify you before any such change.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph ph-dot-outline text-flame mt-1 flex-shrink-0"></i><span><strong class="text-n-9">With your consent:</strong> We will only share data with additional parties if you explicitly authorize us to do so.</span></li>
+                    </ul>
+                </div>
             </section>
 
             <!-- Section 5 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">5. Third-Party Services We Use</h2>
-                <p class="mb-4">The App uses the following third-party services to operate:</p>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-sm border border-white/10">
-                        <thead>
-                            <tr class="border-b border-white/10 bg-white/5">
-                                <th class="text-left p-4 text-on-surface font-semibold">Service</th>
-                                <th class="text-left p-4 text-on-surface font-semibold">Purpose</th>
-                                <th class="text-left p-4 text-on-surface font-semibold">Data Shared</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-white/5">
-                            <tr><td class="p-4">Supabase</td><td class="p-4">Authentication, cloud database, data storage</td><td class="p-4">Account info, app data</td></tr>
-                            <tr><td class="p-4">Firebase Analytics (Google)</td><td class="p-4">Anonymous UI usage tracking and app performance monitoring</td><td class="p-4">Screen views, feature usage, device info, session data. No financial data is shared.</td></tr>
-                            <tr><td class="p-4">Firebase Crashlytics (Google)</td><td class="p-4">Identifying and fixing app crashes and errors</td><td class="p-4">Crash logs, device info</td></tr>
-                        </tbody>
-                    </table>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">05</span>
                 </div>
-                <p class="mt-4">Each third-party service operates under its own privacy policy. We encourage you to review their policies.</p>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">Third-Party Services We Use</h2>
+                    <p class="text-n-7 text-[15px] leading-relaxed">The App uses the following third-party services to operate:</p>
+                    <div class="overflow-x-auto border border-[#E2E1DD]">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="border-b border-[#E2E1DD] bg-[#F4F3EE]">
+                                    <th class="text-left p-4 text-n-9 font-semibold text-xs uppercase tracking-[0.5px]">Service</th>
+                                    <th class="text-left p-4 text-n-9 font-semibold text-xs uppercase tracking-[0.5px]">Purpose</th>
+                                    <th class="text-left p-4 text-n-9 font-semibold text-xs uppercase tracking-[0.5px]">Data Shared</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-[#E2E1DD]">
+                                <tr class="bg-white"><td class="p-4 text-n-7 font-medium">Supabase</td><td class="p-4 text-n-6">Authentication, cloud database, data storage</td><td class="p-4 text-n-6">Account info, app data</td></tr>
+                                <tr><td class="p-4 text-n-7 font-medium">Firebase Analytics</td><td class="p-4 text-n-6">Anonymous UI usage tracking and app performance monitoring</td><td class="p-4 text-n-6">Screen views, feature usage, device info. No financial data.</td></tr>
+                                <tr class="bg-white"><td class="p-4 text-n-7 font-medium">Firebase Crashlytics</td><td class="p-4 text-n-6">Identifying and fixing app crashes and errors</td><td class="p-4 text-n-6">Crash logs, device info</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-n-6 text-sm">Each third-party service operates under its own privacy policy. We encourage you to review their policies.</p>
+                </div>
             </section>
 
             <!-- Section 6 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">6. Your Rights and Choices</h2>
-                <p class="mb-4">You have the following rights regarding your data:</p>
-                <ul class="list-disc pl-6 space-y-2">
-                    <li><strong class="text-on-surface">Access:</strong> You can view all data you have entered into the App at any time.</li>
-                    <li><strong class="text-on-surface">Export:</strong> You can export all of your data using the App's built-in export features (CSV, XLSX formats). Your data is never trapped inside the App.</li>
-                    <li><strong class="text-on-surface">Correction:</strong> You can edit any entry or project data at any time within the App.</li>
-                    <li><strong class="text-on-surface">Account deletion:</strong> You can delete your account at any time. When you delete your account, all associated data is permanently removed from our servers. To delete your account, use the account deletion option in the App's settings or contact us at support@rhydle.com.</li>
-                    <li><strong class="text-on-surface">Opt-out of analytics:</strong> You may opt out of analytics collection through your device's privacy settings.</li>
-                    <li><strong class="text-on-surface">Withdraw consent:</strong> You can withdraw consent for any optional data processing at any time through the App's settings.</li>
-                </ul>
-                <p class="mt-4">If you are located in the European Economic Area (EEA), United Kingdom, or another jurisdiction with applicable data protection laws, you may have additional rights, including the right to lodge a complaint with your local data protection authority.</p>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">06</span>
+                </div>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">Your Rights and Choices</h2>
+                    <p class="text-n-7 text-[15px] leading-relaxed">You have the following rights regarding your data:</p>
+                    <ul class="space-y-3 text-n-7 text-[15px]">
+                        <li class="flex items-start gap-3"><i class="ph-fill ph-check-circle text-flame mt-0.5 flex-shrink-0"></i><span><strong class="text-n-9">Access:</strong> You can view all data you have entered into the App at any time.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph-fill ph-check-circle text-flame mt-0.5 flex-shrink-0"></i><span><strong class="text-n-9">Export:</strong> You can export all of your data using the App's built-in export features (CSV, XLSX formats). Your data is never trapped inside the App.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph-fill ph-check-circle text-flame mt-0.5 flex-shrink-0"></i><span><strong class="text-n-9">Correction:</strong> You can edit any entry or project data at any time within the App.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph-fill ph-check-circle text-flame mt-0.5 flex-shrink-0"></i><span><strong class="text-n-9">Account deletion:</strong> You can delete your account at any time. All associated data is permanently removed from our servers. Use the deletion option in App settings or contact <a href="mailto:support@rhydle.com" class="text-flame hover:underline">support@rhydle.com</a>.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph-fill ph-check-circle text-flame mt-0.5 flex-shrink-0"></i><span><strong class="text-n-9">Opt-out of analytics:</strong> You may opt out of analytics collection through your device's privacy settings.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph-fill ph-check-circle text-flame mt-0.5 flex-shrink-0"></i><span><strong class="text-n-9">Withdraw consent:</strong> You can withdraw consent for any optional data processing at any time through the App's settings.</span></li>
+                    </ul>
+                    <p class="text-n-7 text-[15px] leading-relaxed">If you are located in the European Economic Area (EEA), United Kingdom, or another jurisdiction with applicable data protection laws, you may have additional rights, including the right to lodge a complaint with your local data protection authority.</p>
+                </div>
             </section>
 
             <!-- Section 7 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">7. Data Retention and Deletion</h2>
-                <p class="mb-4"><strong class="text-primary">We do not retain your data beyond what is necessary to provide the service to you.</strong></p>
-                <ul class="list-disc pl-6 space-y-2">
-                    <li><strong class="text-on-surface">While your account is active:</strong> Your data is stored to provide the App's features.</li>
-                    <li><strong class="text-on-surface">When you delete your account:</strong> All your personal data and financial records are permanently deleted from our servers within 30 days of your request.</li>
-                    <li><strong class="text-on-surface">Usage and analytics data:</strong> Retained only in anonymized, aggregated form and cannot be traced back to you.</li>
-                    <li><strong class="text-on-surface">Feedback submissions:</strong> Retained for product improvement purposes unless you request deletion.</li>
-                </ul>
-                <p class="mt-4">You are never locked in. You can export all of your data and delete your account at any time.</p>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">07</span>
+                </div>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">Data Retention and Deletion</h2>
+                    <div class="bg-flame-1 border-l-[3px] border-flame p-5">
+                        <p class="text-n-9 text-sm leading-relaxed"><strong class="text-flame">We do not retain your data beyond what is necessary to provide the service to you.</strong></p>
+                    </div>
+                    <ul class="space-y-3 text-n-7 text-[15px]">
+                        <li class="flex items-start gap-3"><i class="ph ph-dot-outline text-flame mt-1 flex-shrink-0"></i><span><strong class="text-n-9">While your account is active:</strong> Your data is stored to provide the App's features.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph ph-dot-outline text-flame mt-1 flex-shrink-0"></i><span><strong class="text-n-9">When you delete your account:</strong> All your personal data and financial records are permanently deleted from our servers within 30 days of your request.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph ph-dot-outline text-flame mt-1 flex-shrink-0"></i><span><strong class="text-n-9">Usage and analytics data:</strong> Retained only in anonymized, aggregated form and cannot be traced back to you.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph ph-dot-outline text-flame mt-1 flex-shrink-0"></i><span><strong class="text-n-9">Feedback submissions:</strong> Retained for product improvement purposes unless you request deletion.</span></li>
+                    </ul>
+                    <p class="text-n-7 text-[15px] leading-relaxed">You are never locked in. You can export all of your data and delete your account at any time.</p>
+                </div>
             </section>
 
             <!-- Section 8 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">8. Children's Privacy</h2>
-                <p>Rhydle is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that we have inadvertently collected data from a child under 13, we will take steps to delete it promptly.</p>
-                <p class="mt-4">If you are a parent or guardian and believe your child has provided personal information to us, please contact us at support@rhydle.com.</p>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">08</span>
+                </div>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">Children's Privacy</h2>
+                    <p class="text-n-7 text-[15px] leading-relaxed">Rhydle is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that we have inadvertently collected data from a child under 13, we will take steps to delete it promptly.</p>
+                    <p class="text-n-7 text-[15px] leading-relaxed">If you are a parent or guardian and believe your child has provided personal information to us, please contact us at <a href="mailto:support@rhydle.com" class="text-flame hover:underline">support@rhydle.com</a>.</p>
+                </div>
             </section>
 
             <!-- Section 9 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">9. International Data Transfers</h2>
-                <p>Your information may be stored and processed in countries other than your own, including countries where our cloud infrastructure provider (Supabase) operates. By using the App, you consent to the transfer of your information to countries that may have different data protection standards than your country of residence.</p>
-                <p class="mt-4">Where required by applicable law, we ensure appropriate safeguards are in place for international data transfers.</p>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">09</span>
+                </div>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">International Data Transfers</h2>
+                    <p class="text-n-7 text-[15px] leading-relaxed">Your information may be stored and processed in countries other than your own, including countries where our cloud infrastructure provider (Supabase) operates. By using the App, you consent to the transfer of your information to countries that may have different data protection standards than your country of residence.</p>
+                    <p class="text-n-7 text-[15px] leading-relaxed">Where required by applicable law, we ensure appropriate safeguards are in place for international data transfers.</p>
+                </div>
             </section>
 
             <!-- Section 10 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">10. Changes to This Privacy Policy</h2>
-                <p class="mb-4">We may update this Privacy Policy from time to time. When we make material changes, we will:</p>
-                <ul class="list-disc pl-6 space-y-2">
-                    <li>Update the "Effective Date" at the top of this policy.</li>
-                    <li>Notify you through the App or by other reasonable means.</li>
-                    <li>Where required by law, seek your consent for material changes.</li>
-                </ul>
-                <p class="mt-4">We encourage you to review this Privacy Policy periodically.</p>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">10</span>
+                </div>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">Changes to This Privacy Policy</h2>
+                    <p class="text-n-7 text-[15px] leading-relaxed">We may update this Privacy Policy from time to time. When we make material changes, we will:</p>
+                    <ul class="space-y-2 text-n-7 text-[15px]">
+                        <li class="flex items-start gap-3"><i class="ph ph-dot-outline text-flame mt-1 flex-shrink-0"></i><span>Update the "Effective Date" at the top of this policy.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph ph-dot-outline text-flame mt-1 flex-shrink-0"></i><span>Notify you through the App or by other reasonable means.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph ph-dot-outline text-flame mt-1 flex-shrink-0"></i><span>Where required by law, seek your consent for material changes.</span></li>
+                    </ul>
+                    <p class="text-n-7 text-[15px] leading-relaxed">We encourage you to review this Privacy Policy periodically.</p>
+                </div>
             </section>
 
             <!-- Section 11 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">11. Additional Disclosures for California Residents</h2>
-                <p class="mb-4">If you are a California resident, you may have additional rights under the California Consumer Privacy Act (CCPA), including:</p>
-                <ul class="list-disc pl-6 space-y-2">
-                    <li>The right to know what personal information we collect, use, and disclose.</li>
-                    <li>The right to request deletion of your personal information.</li>
-                    <li>The right to opt out of the sale of your personal information. <strong class="text-primary">We do not sell personal information.</strong></li>
-                    <li>The right to non-discrimination for exercising your privacy rights.</li>
-                </ul>
-                <p class="mt-4">To exercise these rights, contact us at support@rhydle.com.</p>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">11</span>
+                </div>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">Additional Disclosures for California Residents</h2>
+                    <p class="text-n-7 text-[15px] leading-relaxed">If you are a California resident, you may have additional rights under the California Consumer Privacy Act (CCPA), including:</p>
+                    <ul class="space-y-2 text-n-7 text-[15px]">
+                        <li class="flex items-start gap-3"><i class="ph ph-dot-outline text-flame mt-1 flex-shrink-0"></i><span>The right to know what personal information we collect, use, and disclose.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph ph-dot-outline text-flame mt-1 flex-shrink-0"></i><span>The right to request deletion of your personal information.</span></li>
+                        <li class="flex items-start gap-3"><i class="ph ph-dot-outline text-flame mt-1 flex-shrink-0"></i><span>The right to opt out of the sale of your personal information. <strong class="text-flame">We do not sell personal information.</strong></span></li>
+                        <li class="flex items-start gap-3"><i class="ph ph-dot-outline text-flame mt-1 flex-shrink-0"></i><span>The right to non-discrimination for exercising your privacy rights.</span></li>
+                    </ul>
+                    <p class="text-n-7 text-[15px] leading-relaxed">To exercise these rights, contact us at <a href="mailto:support@rhydle.com" class="text-flame hover:underline">support@rhydle.com</a>.</p>
+                </div>
             </section>
 
             <!-- Section 12 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">12. Future Features</h2>
-                <p>We may introduce additional features in future versions of the App, such as integrations with social media platforms or other third-party services. If and when such features are introduced, we will update this Privacy Policy accordingly and notify you before any new data collection or sharing takes place. No additional data will ever be collected or shared without your knowledge and consent.</p>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">12</span>
+                </div>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">Future Features</h2>
+                    <p class="text-n-7 text-[15px] leading-relaxed">We may introduce additional features in future versions of the App, such as integrations with social media platforms or other third-party services. If and when such features are introduced, we will update this Privacy Policy accordingly and notify you before any new data collection or sharing takes place. No additional data will ever be collected or shared without your knowledge and consent.</p>
+                </div>
             </section>
 
             <!-- Section 13 -->
-            <section>
-                <h2 class="font-serif-auth text-2xl font-bold text-on-surface mb-6">13. Contact Us</h2>
-                <p>If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at:</p>
-                <p class="mt-4"><strong class="text-primary">Email:</strong> <a href="mailto:support@rhydle.com" class="text-primary hover:underline">support@rhydle.com</a></p>
-                <p class="mt-4">We aim to respond to all privacy-related inquiries within 5 business days.</p>
+            <section class="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10">
+                <div class="pt-1">
+                    <span class="font-serif italic text-flame text-sm font-normal">13</span>
+                </div>
+                <div class="space-y-4">
+                    <h2 class="text-xl font-bold text-n-11">Contact Us</h2>
+                    <p class="text-n-7 text-[15px] leading-relaxed">If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at:</p>
+                    <div class="bg-white border border-[#E2E1DD] p-6 space-y-2">
+                        <p class="text-n-7 text-sm"><span class="text-n-5 text-[10px] uppercase tracking-[1px] font-semibold block mb-1">Email</span><a href="mailto:support@rhydle.com" class="text-flame hover:underline font-medium">support@rhydle.com</a></p>
+                        <p class="text-n-6 text-xs pt-2">We aim to respond to all privacy-related inquiries within 5 business days.</p>
+                    </div>
+                </div>
             </section>
 
-            <hr class="border-white/10">
-            <p class="text-xs text-white/30 text-center">Last updated: March 7, 2026</p>
-
         </div>
+
+        <div class="mt-20 pt-10 border-t border-[#E2E1DD] flex flex-col md:flex-row justify-between items-start gap-4">
+            <p class="text-n-5 text-xs uppercase tracking-[2px]">Last updated: March 7, 2026</p>
+            <a href="terms-of-service.html" class="text-flame text-sm hover:underline flex items-center gap-1.5">
+                Read Terms of Service <i class="ph ph-arrow-right text-sm"></i>
+            </a>
+        </div>
+
     </article>
 </main>
 
 <!-- ====== FOOTER ====== -->
-<footer class="bg-background border-t border-white/5 py-16 px-10">
-    <div class="max-w-3xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-        <div class="text-primary font-bold text-2xl font-display">Rhydle</div>
-        <div class="flex items-center gap-8 text-sm text-secondary">
-            <a class="hover:text-primary transition-colors" href="privacy-policy.html">Privacy Policy</a>
-            <a class="hover:text-primary transition-colors" href="terms-of-service.html">Terms of Service</a>
-            <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+<footer class="bg-n-12 border-t border-n-9 py-12 px-6">
+    <div class="max-w-3xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+        <span class="text-lg font-[800] tracking-tight text-flame">RHYDLE</span>
+        <div class="flex items-center gap-6 text-[11px] font-semibold uppercase tracking-[0.5px] text-n-5">
+            <a class="hover:text-flame transition-colors" href="privacy-policy.html">Privacy Policy</a>
+            <span class="text-n-8">/</span>
+            <a class="hover:text-flame transition-colors" href="terms-of-service.html">Terms of Service</a>
+            <span class="text-n-8">/</span>
+            <a class="hover:text-flame transition-colors" href="index.html">Home</a>
         </div>
-        <p class="text-[10px] uppercase tracking-widest text-white/20">&copy; 2026 Rhydle Corp.</p>
+        <p class="text-[10px] uppercase tracking-[1px] text-n-8">&copy; 2026 Rhydle Corp.</p>
     </div>
 </footer>
 
