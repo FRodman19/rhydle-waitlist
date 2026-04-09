@@ -4,6 +4,8 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Email Confirmed | Rhydle</title>
+    <link rel="icon" type="image/png" href="LOGO_80.png">
+    <link rel="apple-touch-icon" href="LOGO_80.png">
     <meta name="description" content="Your email has been verified. You can now log in on the Rhydle app.">
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -69,7 +71,10 @@
 
 <!-- ====== NAV ====== -->
 <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 py-6 bg-background/80 backdrop-blur-xl border-b border-white/5">
-    <a href="index.html" class="text-2xl font-bold tracking-tighter text-primary font-display">Rhydle</a>
+    <a href="index.html" class="flex items-center gap-2.5">
+        <img src="LOGO_80.png" alt="Rhydle logo" class="w-8 h-8 rounded-md">
+        <span class="text-2xl font-bold tracking-tighter text-primary font-display">Rhydle</span>
+    </a>
     <a href="index.html" class="text-secondary hover:text-primary transition-colors text-sm font-serif-auth italic flex items-center gap-2">
         <span class="material-symbols-outlined text-sm">arrow_back</span>
         Back to Home
@@ -122,6 +127,7 @@
         <div class="animate-fade-up animate-fade-up-4 pt-4">
             <div class="border-t border-white/5 pt-8">
                 <p class="text-white/20 text-[10px] uppercase tracking-[0.4em]">You're all set. Welcome to Rhydle.</p>
+                <a href="https://x.com/grow_loud" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-secondary hover:text-primary transition-colors text-xs mt-4">Follow us on X</a>
             </div>
         </div>
 
