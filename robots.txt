@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Post-action utility page — no search value
+Disallow: /confirmed
+Disallow: /confirmed.html
+
+Sitemap: https://rhydle.com/sitemap.xml
