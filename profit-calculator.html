@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Free Net Profit Calculator for Small Business | Rhydle</title>
+    <link rel="canonical" href="https://rhydle.com/profit-calculator">
+    <link rel="icon" type="image/png" href="LOGO_80.png">
+    <link rel="apple-touch-icon" href="LOGO_80.png">
+    <meta name="description" content="Free net profit calculator for small business. Enter revenue, cost of goods, expenses, and taxes to instantly see your real profit and net profit margin.">
+    <meta property="og:title" content="Free Net Profit Calculator for Small Business">
+    <meta property="og:description" content="Enter your revenue and costs to instantly see your real profit and net profit margin. Free, no signup.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rhydle.com/profit-calculator">
+    <meta property="og:image" content="https://rhydle.com/LOGO_80.png">
+    <meta property="og:site_name" content="Rhydle">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Free Net Profit Calculator for Small Business">
+    <meta name="twitter:description" content="Enter your revenue and costs to instantly see your real profit and net profit margin. Free, no signup.">
+    <meta name="twitter:image" content="https://rhydle.com/LOGO_80.png">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Rhydle Net Profit Calculator",
+        "url": "https://rhydle.com/profit-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any (web browser)",
+        "description": "A free net profit calculator for small businesses. Enter revenue, cost of goods sold, operating expenses, and taxes to see your real profit and net profit margin instantly.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "publisher": { "@type": "Organization", "name": "Rhydle", "url": "https://rhydle.com" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://rhydle.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Profit Calculator", "item": "https://rhydle.com/profit-calculator" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do you calculate net profit?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Net profit equals revenue minus cost of goods sold, minus operating expenses, minus taxes and interest. Enter each of those figures into the calculator and it returns your net profit and net profit margin instantly." }
+            },
+            {
+                "@type": "Question",
+                "name": "What is net profit margin?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Net profit margin is your net profit divided by revenue, expressed as a percentage. A 10% margin means you keep 10 cents of every dollar of revenue after all costs. Most small businesses aim for 7% to 10%." }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the difference between gross profit and net profit?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Gross profit is revenue minus the cost of goods sold only. Net profit goes further and also subtracts operating expenses, taxes, and interest, so it reflects what you truly keep." }
+            },
+            {
+                "@type": "Question",
+                "name": "Is this profit calculator free?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Rhydle net profit calculator is completely free, requires no signup, and runs entirely in your browser — none of your numbers are sent anywhere." }
+            }
+        ]
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,700&display=swap" rel="stylesheet"/>
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        flame: { 1:'#FEF6F1', 2:'#FDE9DA', 3:'#FBD5BA', 4:'#F9BE96', 5:'#F6A46E', DEFAULT:'#EF6D28', 7:'#D96123', 8:'#B8521E', 9:'#944219', 10:'#703214', 11:'#4D2310', 12:'#2A140A' },
+                        n: { 1:'#F5F5F3', 2:'#E8E8E5', 3:'#D4D4D0', 4:'#B0B1AF', 5:'#8E8F8E', 6:'#6E706E', 7:'#5A5C5A', 8:'#333433', 9:'#242524', 10:'#1A1B1A', 11:'#131413', 12:'#0C0D0C' },
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Fraunces"', 'serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        [id] { scroll-margin-top: 90px; }
+        /* Signature: the big live profit number */
+        .result-num { font-variant-numeric: tabular-nums; transition: color .25s ease; }
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+        input[type="number"] { -moz-appearance: textfield; }
+        @media (prefers-reduced-motion: reduce) { .result-num { transition: none; } }
+    </style>
+</head>
+<body class="bg-[#FAF9F7] text-n-11 font-sans selection:bg-flame selection:text-white">
+
+<!-- ====== NAV ====== -->
+<nav id="mainNav" class="fixed top-0 left-0 right-0 z-50 bg-n-12">
+    <div class="flex items-center justify-between px-6 md:px-12 lg:px-16 py-4">
+        <a href="index.html" class="flex items-center gap-2.5">
+            <img src="LOGO_80.png" alt="Rhydle logo" class="w-8 h-8 rounded-md">
+            <span style="font-family: 'Montserrat', sans-serif; font-weight: 800;" class="text-[1.5rem] tracking-tight text-white">Rhydle</span>
+        </a>
+        <div class="hidden md:flex items-center gap-7">
+            <a class="text-[10px] font-semibold tracking-[1px] uppercase transition-colors text-n-5 hover:text-flame" href="index.html#start">Home</a>
+            <a class="text-[10px] font-semibold tracking-[1px] uppercase transition-colors text-n-5 hover:text-flame" href="index.html#how-it-works">How It Works</a>
+            <a class="text-[10px] font-semibold tracking-[1px] uppercase transition-colors text-n-5 hover:text-flame" href="business-profit-guide.html">Guide</a>
+            <a class="text-[10px] font-semibold tracking-[1px] uppercase transition-colors text-flame" href="profit-calculator.html">Calculator</a>
+        </div>
+        <div class="flex items-center gap-2">
+            <a href="index.html#final-cta" class="hidden sm:inline-flex bg-flame text-white px-5 py-2.5 font-medium text-[11px] tracking-[0.5px] uppercase hover:bg-flame-7 active:bg-flame-8 transition-colors">Join the Waitlist</a>
+            <button id="navToggle" type="button" class="md:hidden inline-flex items-center justify-center w-10 h-10 text-white" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+                <i id="navToggleIcon" class="ph ph-list text-2xl"></i>
+            </button>
+        </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-n-9 bg-n-12">
+        <div class="px-6 py-2 flex flex-col">
+            <a class="py-3 text-[11px] font-semibold tracking-[1px] uppercase transition-colors text-n-5 hover:text-flame" href="index.html#start">Home</a>
+            <a class="py-3 text-[11px] font-semibold tracking-[1px] uppercase transition-colors text-n-5 hover:text-flame" href="index.html#how-it-works">How It Works</a>
+            <a class="py-3 text-[11px] font-semibold tracking-[1px] uppercase transition-colors text-n-5 hover:text-flame" href="business-profit-guide.html">Guide</a>
+            <a class="py-3 text-[11px] font-semibold tracking-[1px] uppercase transition-colors text-flame" href="profit-calculator.html">Calculator</a>
+            <a href="index.html#final-cta" class="mt-3 mb-3 inline-flex items-center justify-center bg-flame text-white px-5 py-3 font-medium text-[11px] tracking-[0.5px] uppercase hover:bg-flame-7 transition-colors">Join the Waitlist</a>
+        </div>
+    </div>
+</nav>
+<script>
+(function(){var t=document.getElementById('navToggle'),m=document.getElementById('mobileMenu'),ic=document.getElementById('navToggleIcon');if(!t||!m)return;t.addEventListener('click',function(){var hidden=m.classList.toggle('hidden');t.setAttribute('aria-expanded',hidden?'false':'true');t.setAttribute('aria-label',hidden?'Open menu':'Close menu');if(ic)ic.className=hidden?'ph ph-list text-2xl':'ph ph-x text-2xl';});})();
+</script>
+
+<!-- ====== PAGE HEADER ====== -->
+<header class="bg-n-12 pt-28 pb-16 px-6">
+    <div class="max-w-4xl mx-auto">
+        <nav aria-label="Breadcrumb" class="mb-6">
+            <ol class="flex items-center gap-2 text-[10px] font-semibold tracking-[1px] uppercase text-n-6">
+                <li><a href="index.html" class="hover:text-flame transition-colors">Home</a></li>
+                <li aria-hidden="true" class="text-n-8">/</li>
+                <li class="text-n-4">Profit Calculator</li>
+            </ol>
+        </nav>
+        <span class="text-[10px] font-semibold tracking-[1px] uppercase text-flame block mb-4">Free Tool</span>
+        <h1 class="font-medium text-[clamp(2.2rem,5.5vw,3.6rem)] leading-[1.08] tracking-tight text-n-2 mb-6">Net profit <span class="font-serif italic font-normal text-flame">calculator</span></h1>
+        <p class="text-n-4 text-lg max-w-2xl leading-relaxed">Enter what you earned and what it cost. See your real profit — and the margin that tells you whether the business actually works. Free, no signup, nothing leaves your browser.</p>
+    </div>
+</header>
+
+<!-- ====== CALCULATOR ====== -->
+<main class="px-6 py-16 md:py-20">
+    <section class="max-w-4xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-6 items-start">
+
+            <!-- Inputs -->
+            <form id="calcForm" class="bg-white border border-[#E2E1DD] p-8 md:p-10 space-y-6" autocomplete="off">
+                <div class="space-y-2">
+                    <label for="revenue" class="block text-sm font-semibold text-n-11">Revenue <span class="text-n-5 font-normal">— all money that came in</span></label>
+                    <div class="flex items-center border border-[#E2E1DD] focus-within:ring-1 focus-within:ring-flame focus-within:border-flame transition-all">
+                        <span class="px-4 text-n-5 select-none">$</span>
+                        <input id="revenue" name="revenue" type="number" inputmode="decimal" min="0" step="any" placeholder="0" class="flex-1 py-3.5 pr-4 outline-none text-n-11 placeholder:text-n-4">
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label for="cogs" class="block text-sm font-semibold text-n-11">Cost of goods sold <span class="text-n-5 font-normal">— materials, direct labor</span></label>
+                    <div class="flex items-center border border-[#E2E1DD] focus-within:ring-1 focus-within:ring-flame focus-within:border-flame transition-all">
+                        <span class="px-4 text-n-5 select-none">$</span>
+                        <input id="cogs" name="cogs" type="number" inputmode="decimal" min="0" step="any" placeholder="0" class="flex-1 py-3.5 pr-4 outline-none text-n-11 placeholder:text-n-4">
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label for="opex" class="block text-sm font-semibold text-n-11">Operating expenses <span class="text-n-5 font-normal">— rent, ads, software, payroll</span></label>
+                    <div class="flex items-center border border-[#E2E1DD] focus-within:ring-1 focus-within:ring-flame focus-within:border-flame transition-all">
+                        <span class="px-4 text-n-5 select-none">$</span>
+                        <input id="opex" name="opex" type="number" inputmode="decimal" min="0" step="any" placeholder="0" class="flex-1 py-3.5 pr-4 outline-none text-n-11 placeholder:text-n-4">
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label for="other" class="block text-sm font-semibold text-n-11">Taxes &amp; interest <span class="text-n-5 font-normal">— and any other costs</span></label>
+                    <div class="flex items-center border border-[#E2E1DD] focus-within:ring-1 focus-within:ring-flame focus-within:border-flame transition-all">
+                        <span class="px-4 text-n-5 select-none">$</span>
+                        <input id="other" name="other" type="number" inputmode="decimal" min="0" step="any" placeholder="0" class="flex-1 py-3.5 pr-4 outline-none text-n-11 placeholder:text-n-4">
+                    </div>
+                </div>
+                <button type="reset" id="resetBtn" class="text-n-5 text-[11px] font-semibold tracking-[1px] uppercase hover:text-flame transition-colors flex items-center gap-1.5"><i class="ph ph-arrow-counter-clockwise"></i> Reset</button>
+            </form>
+
+            <!-- Result (signature) -->
+            <div class="bg-n-12 p-8 md:p-10 lg:sticky lg:top-24">
+                <span class="text-[10px] font-semibold tracking-[1px] uppercase text-n-5 block mb-3">What you actually keep</span>
+                <p id="netProfit" class="result-num font-medium text-flame text-[clamp(2.8rem,9vw,4.5rem)] leading-none tracking-tight" aria-live="polite">$0</p>
+                <p id="verdict" class="text-n-4 text-sm mt-4 leading-relaxed">Enter your numbers to see your real profit.</p>
+
+                <div class="mt-8 pt-8 border-t border-n-9 grid grid-cols-2 gap-6">
+                    <div>
+                        <span class="text-[10px] font-semibold tracking-[1px] uppercase text-n-6 block mb-1.5">Gross profit</span>
+                        <p id="grossProfit" class="result-num text-n-2 text-2xl font-medium">$0</p>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-semibold tracking-[1px] uppercase text-n-6 block mb-1.5">Net margin</span>
+                        <p id="margin" class="result-num text-n-2 text-2xl font-medium">0%</p>
+                    </div>
+                </div>
+
+                <a href="index.html#final-cta" class="mt-8 w-full inline-flex items-center justify-center gap-2 bg-flame text-white px-6 py-3.5 font-medium text-[11px] tracking-[0.5px] uppercase hover:bg-flame-7 active:bg-flame-8 transition-colors">
+                    Get this daily, automatically <i class="ph ph-arrow-right"></i>
+                </a>
+                <p class="text-n-6 text-xs mt-3 text-center">Rhydle tracks it across every business you run.</p>
+            </div>
+        </div>
+
+        <!-- Explanation (GEO content) -->
+        <div class="max-w-3xl mx-auto mt-20 space-y-14">
+            <section id="how-it-works-calc" class="scroll-mt-24">
+                <h2 class="font-medium text-[clamp(1.6rem,4vw,2.2rem)] text-n-11 mb-5">How the calculator works</h2>
+                <p class="text-n-7 text-[17px] leading-relaxed mb-6">It uses the standard net profit formula — the same one your accountant uses on a profit-and-loss statement:</p>
+                <div class="bg-n-12 p-6 md:p-8 mb-6">
+                    <p class="font-serif text-flame text-lg md:text-xl leading-relaxed">Net profit = Revenue − Cost of goods sold − Operating expenses − Taxes &amp; interest</p>
+                </div>
+                <p class="text-n-7 text-[17px] leading-relaxed">Your <strong class="text-n-11">net profit margin</strong> is that number divided by revenue, shown as a percentage — the cleanest way to compare one month, or one business, against another.</p>
+            </section>
+
+            <section id="good-margin" class="scroll-mt-24">
+                <h2 class="font-medium text-[clamp(1.6rem,4vw,2.2rem)] text-n-11 mb-5">What's a good result?</h2>
+                <p class="text-n-7 text-[17px] leading-relaxed mb-4">Most small businesses aim to keep <strong class="text-n-11">7–10%</strong> of revenue as net profit. Below zero means costs are outrunning income; a thin 0–7% margin works but leaves little cushion; 10% and up is strong, and common for service businesses with low production costs.</p>
+                <p class="text-n-7 text-[17px] leading-relaxed">Want the full picture? Read the <a href="business-profit-guide.html" class="text-flame hover:underline font-medium">guide to knowing if your business is actually profitable</a>.</p>
+            </section>
+
+            <section id="faq" class="scroll-mt-24">
+                <h2 class="font-medium text-[clamp(1.6rem,4vw,2.2rem)] text-n-11 mb-8">Frequently asked questions</h2>
+                <div class="space-y-4">
+                    <details class="bg-white border border-[#E2E1DD] p-6 group">
+                        <summary class="flex items-center justify-between cursor-pointer text-base font-bold text-n-11">How do you calculate net profit?<i class="ph ph-plus text-flame text-lg shrink-0 ml-4 group-open:hidden"></i><i class="ph ph-minus text-flame text-lg shrink-0 ml-4 hidden group-open:block"></i></summary>
+                        <p class="text-n-7 leading-relaxed mt-4">Net profit equals revenue minus cost of goods sold, minus operating expenses, minus taxes and interest. Enter each of those figures into the calculator and it returns your net profit and net profit margin instantly.</p>
+                    </details>
+                    <details class="bg-white border border-[#E2E1DD] p-6 group">
+                        <summary class="flex items-center justify-between cursor-pointer text-base font-bold text-n-11">What is net profit margin?<i class="ph ph-plus text-flame text-lg shrink-0 ml-4 group-open:hidden"></i><i class="ph ph-minus text-flame text-lg shrink-0 ml-4 hidden group-open:block"></i></summary>
+                        <p class="text-n-7 leading-relaxed mt-4">Net profit margin is your net profit divided by revenue, expressed as a percentage. A 10% margin means you keep 10 cents of every dollar of revenue after all costs. Most small businesses aim for 7% to 10%.</p>
+                    </details>
+                    <details class="bg-white border border-[#E2E1DD] p-6 group">
+                        <summary class="flex items-center justify-between cursor-pointer text-base font-bold text-n-11">What is the difference between gross profit and net profit?<i class="ph ph-plus text-flame text-lg shrink-0 ml-4 group-open:hidden"></i><i class="ph ph-minus text-flame text-lg shrink-0 ml-4 hidden group-open:block"></i></summary>
+                        <p class="text-n-7 leading-relaxed mt-4">Gross profit is revenue minus the cost of goods sold only. Net profit goes further and also subtracts operating expenses, taxes, and interest, so it reflects what you truly keep.</p>
+                    </details>
+                    <details class="bg-white border border-[#E2E1DD] p-6 group">
+                        <summary class="flex items-center justify-between cursor-pointer text-base font-bold text-n-11">Is this profit calculator free?<i class="ph ph-plus text-flame text-lg shrink-0 ml-4 group-open:hidden"></i><i class="ph ph-minus text-flame text-lg shrink-0 ml-4 hidden group-open:block"></i></summary>
+                        <p class="text-n-7 leading-relaxed mt-4">Yes. The Rhydle net profit calculator is completely free, requires no signup, and runs entirely in your browser — none of your numbers are sent anywhere.</p>
+                    </details>
+                </div>
+            </section>
+        </div>
+    </section>
+</main>
+
+<!-- ====== FOOTER ====== -->
+<footer class="bg-n-11 border-t border-n-9 py-20 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-16">
+        <div class="space-y-5">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="LOGO_80.png" alt="Rhydle logo" class="w-10 h-10 rounded-lg">
+                <span style="font-family: 'Montserrat', sans-serif; font-weight: 800;" class="text-2xl tracking-tight text-white">Rhydle</span>
+            </a>
+            <p class="font-serif italic text-n-6 text-lg">Know your real profit. Every day.</p>
+            <p class="text-[10px] uppercase tracking-[1px] text-n-8 mt-8">&copy; 2026 Rhydle Corp. All Rights Reserved.</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-16">
+            <div class="space-y-5">
+                <span class="text-[10px] font-semibold uppercase tracking-[1px] text-flame">Rhydle</span>
+                <ul class="space-y-3 text-sm text-n-6">
+                    <li><a class="hover:text-flame transition-colors" href="index.html#how-it-works">How It Works</a></li>
+                    <li><a class="hover:text-flame transition-colors" href="business-profit-guide.html">Profit Guide</a></li>
+                    <li><a class="hover:text-flame transition-colors" href="profit-calculator.html">Profit Calculator</a></li>
+                    <li><a class="hover:text-flame transition-colors" href="index.html#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="space-y-5">
+                <span class="text-[10px] font-semibold uppercase tracking-[1px] text-flame">Support</span>
+                <ul class="space-y-3 text-sm text-n-6">
+                    <li><a class="hover:text-flame transition-colors" href="export-data.html">Data Export</a></li>
+                    <li><a class="hover:text-flame transition-colors" href="delete-account.html">Delete Account</a></li>
+                    <li><a class="hover:text-flame transition-colors" href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a class="hover:text-flame transition-colors" href="terms-of-service.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="space-y-5">
+                <span class="text-[10px] font-semibold uppercase tracking-[1px] text-flame">Connect</span>
+                <ul class="space-y-3 text-sm text-n-6">
+                    <li><a class="hover:text-flame transition-colors" href="https://x.com/grow_loud" target="_blank" rel="noopener">Twitter / X</a></li>
+                    <li><a class="hover:text-flame transition-colors" href="mailto:support@rhydle.com">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+(function () {
+    var fmt = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+    var ids = ['revenue', 'cogs', 'opex', 'other'];
+    var inputs = {};
+    ids.forEach(function (id) { inputs[id] = document.getElementById(id); });
+
+    var elNet = document.getElementById('netProfit');
+    var elGross = document.getElementById('grossProfit');
+    var elMargin = document.getElementById('margin');
+    var elVerdict = document.getElementById('verdict');
+
+    function num(el) {
+        var v = parseFloat(el.value);
+        return isFinite(v) && v > 0 ? v : 0;
+    }
+
+    function verdictFor(net, margin, revenue) {
+        if (revenue === 0) return { text: 'Enter your numbers to see your real profit.', color: '#B0B1AF' };
+        if (net < 0) return { text: "You're operating at a loss — costs are higher than what came in.", color: '#F6A46E' };
+        if (margin < 7) return { text: 'A thin margin. You keep something, but there is little room for a bad month.', color: '#B0B1AF' };
+        if (margin < 10) return { text: "Healthy — you're in the range most small businesses aim for.", color: '#B0B1AF' };
+        return { text: 'Strong margin. You keep well above the typical small-business range.', color: '#B0B1AF' };
+    }
+
+    function recalc() {
+        var revenue = num(inputs.revenue);
+        var cogs = num(inputs.cogs);
+        var opex = num(inputs.opex);
+        var other = num(inputs.other);
+
+        var gross = revenue - cogs;
+        var net = revenue - cogs - opex - other;
+        var margin = revenue > 0 ? (net / revenue) * 100 : 0;
+
+        elNet.textContent = fmt.format(net);
+        elNet.style.color = net < 0 ? '#F6A46E' : '#EF6D28';
+        elGross.textContent = fmt.format(gross);
+        elMargin.textContent = (revenue > 0 ? margin.toFixed(1) : '0') + '%';
+
+        var v = verdictFor(net, margin, revenue);
+        elVerdict.textContent = v.text;
+        elVerdict.style.color = v.color;
+    }
+
+    ids.forEach(function (id) { inputs[id].addEventListener('input', recalc); });
+    document.getElementById('resetBtn').addEventListener('click', function () {
+        setTimeout(recalc, 0);
+    });
+    recalc();
+})();
+</script>
+
+</body>
+</html>
